@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48EA11B11F54F243002FBB13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11B01F54F243002FBB13 /* AppDelegate.swift */; };
+		48EA11B31F54F243002FBB13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11B21F54F243002FBB13 /* ViewController.swift */; };
+		48EA11B61F54F243002FBB13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA11B41F54F243002FBB13 /* Main.storyboard */; };
+		48EA11B91F54F243002FBB13 /* SuperTrunfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11B71F54F243002FBB13 /* SuperTrunfo.xcdatamodeld */; };
+		48EA11BB1F54F243002FBB13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48EA11BA1F54F243002FBB13 /* Assets.xcassets */; };
+		48EA11BE1F54F243002FBB13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA11BC1F54F243002FBB13 /* LaunchScreen.storyboard */; };
+		48EA11C91F54F243002FBB13 /* SuperTrunfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11C81F54F243002FBB13 /* SuperTrunfoTests.swift */; };
+		48EA11D41F54F243002FBB13 /* SuperTrunfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11D31F54F243002FBB13 /* SuperTrunfoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48EA11C51F54F243002FBB13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48EA11A51F54F243002FBB13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48EA11AC1F54F243002FBB13;
+			remoteInfo = SuperTrunfo;
+		};
+		48EA11D01F54F243002FBB13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48EA11A51F54F243002FBB13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48EA11AC1F54F243002FBB13;
+			remoteInfo = SuperTrunfo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		48EA11AD1F54F243002FBB13 /* SuperTrunfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperTrunfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EA11B01F54F243002FBB13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48EA11B21F54F243002FBB13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48EA11B51F54F243002FBB13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		48EA11B81F54F243002FBB13 /* SuperTrunfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperTrunfo.xcdatamodel; sourceTree = "<group>"; };
+		48EA11BA1F54F243002FBB13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48EA11BD1F54F243002FBB13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		48EA11BF1F54F243002FBB13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48EA11C41F54F243002FBB13 /* SuperTrunfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperTrunfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EA11C81F54F243002FBB13 /* SuperTrunfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTrunfoTests.swift; sourceTree = "<group>"; };
+		48EA11CA1F54F243002FBB13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48EA11CF1F54F243002FBB13 /* SuperTrunfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperTrunfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EA11D31F54F243002FBB13 /* SuperTrunfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTrunfoUITests.swift; sourceTree = "<group>"; };
+		48EA11D51F54F243002FBB13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48EA11AA1F54F243002FBB13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EA11C11F54F243002FBB13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EA11CC1F54F243002FBB13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48EA11A41F54F243002FBB13 = {
+			isa = PBXGroup;
+			children = (
+				48EA11AF1F54F243002FBB13 /* SuperTrunfo */,
+				48EA11C71F54F243002FBB13 /* SuperTrunfoTests */,
+				48EA11D21F54F243002FBB13 /* SuperTrunfoUITests */,
+				48EA11AE1F54F243002FBB13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		48EA11AE1F54F243002FBB13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48EA11AD1F54F243002FBB13 /* SuperTrunfo.app */,
+				48EA11C41F54F243002FBB13 /* SuperTrunfoTests.xctest */,
+				48EA11CF1F54F243002FBB13 /* SuperTrunfoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48EA11AF1F54F243002FBB13 /* SuperTrunfo */ = {
+			isa = PBXGroup;
+			children = (
+				48EA11B01F54F243002FBB13 /* AppDelegate.swift */,
+				48EA11B21F54F243002FBB13 /* ViewController.swift */,
+				48EA11B41F54F243002FBB13 /* Main.storyboard */,
+				48EA11BA1F54F243002FBB13 /* Assets.xcassets */,
+				48EA11BC1F54F243002FBB13 /* LaunchScreen.storyboard */,
+				48EA11BF1F54F243002FBB13 /* Info.plist */,
+				48EA11B71F54F243002FBB13 /* SuperTrunfo.xcdatamodeld */,
+			);
+			path = SuperTrunfo;
+			sourceTree = "<group>";
+		};
+		48EA11C71F54F243002FBB13 /* SuperTrunfoTests */ = {
+			isa = PBXGroup;
+			children = (
+				48EA11C81F54F243002FBB13 /* SuperTrunfoTests.swift */,
+				48EA11CA1F54F243002FBB13 /* Info.plist */,
+			);
+			path = SuperTrunfoTests;
+			sourceTree = "<group>";
+		};
+		48EA11D21F54F243002FBB13 /* SuperTrunfoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				48EA11D31F54F243002FBB13 /* SuperTrunfoUITests.swift */,
+				48EA11D51F54F243002FBB13 /* Info.plist */,
+			);
+			path = SuperTrunfoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48EA11AC1F54F243002FBB13 /* SuperTrunfo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48EA11D81F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfo" */;
+			buildPhases = (
+				48EA11A91F54F243002FBB13 /* Sources */,
+				48EA11AA1F54F243002FBB13 /* Frameworks */,
+				48EA11AB1F54F243002FBB13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuperTrunfo;
+			productName = SuperTrunfo;
+			productReference = 48EA11AD1F54F243002FBB13 /* SuperTrunfo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48EA11C31F54F243002FBB13 /* SuperTrunfoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48EA11DB1F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfoTests" */;
+			buildPhases = (
+				48EA11C01F54F243002FBB13 /* Sources */,
+				48EA11C11F54F243002FBB13 /* Frameworks */,
+				48EA11C21F54F243002FBB13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48EA11C61F54F243002FBB13 /* PBXTargetDependency */,
+			);
+			name = SuperTrunfoTests;
+			productName = SuperTrunfoTests;
+			productReference = 48EA11C41F54F243002FBB13 /* SuperTrunfoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		48EA11CE1F54F243002FBB13 /* SuperTrunfoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48EA11DE1F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfoUITests" */;
+			buildPhases = (
+				48EA11CB1F54F243002FBB13 /* Sources */,
+				48EA11CC1F54F243002FBB13 /* Frameworks */,
+				48EA11CD1F54F243002FBB13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48EA11D11F54F243002FBB13 /* PBXTargetDependency */,
+			);
+			name = SuperTrunfoUITests;
+			productName = SuperTrunfoUITests;
+			productReference = 48EA11CF1F54F243002FBB13 /* SuperTrunfoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48EA11A51F54F243002FBB13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Rennan Chagas";
+				TargetAttributes = {
+					48EA11AC1F54F243002FBB13 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					48EA11C31F54F243002FBB13 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 48EA11AC1F54F243002FBB13;
+					};
+					48EA11CE1F54F243002FBB13 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 48EA11AC1F54F243002FBB13;
+					};
+				};
+			};
+			buildConfigurationList = 48EA11A81F54F243002FBB13 /* Build configuration list for PBXProject "SuperTrunfo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48EA11A41F54F243002FBB13;
+			productRefGroup = 48EA11AE1F54F243002FBB13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48EA11AC1F54F243002FBB13 /* SuperTrunfo */,
+				48EA11C31F54F243002FBB13 /* SuperTrunfoTests */,
+				48EA11CE1F54F243002FBB13 /* SuperTrunfoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48EA11AB1F54F243002FBB13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EA11BE1F54F243002FBB13 /* LaunchScreen.storyboard in Resources */,
+				48EA11BB1F54F243002FBB13 /* Assets.xcassets in Resources */,
+				48EA11B61F54F243002FBB13 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EA11C21F54F243002FBB13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EA11CD1F54F243002FBB13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48EA11A91F54F243002FBB13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EA11B31F54F243002FBB13 /* ViewController.swift in Sources */,
+				48EA11B91F54F243002FBB13 /* SuperTrunfo.xcdatamodeld in Sources */,
+				48EA11B11F54F243002FBB13 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EA11C01F54F243002FBB13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EA11C91F54F243002FBB13 /* SuperTrunfoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EA11CB1F54F243002FBB13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EA11D41F54F243002FBB13 /* SuperTrunfoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48EA11C61F54F243002FBB13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48EA11AC1F54F243002FBB13 /* SuperTrunfo */;
+			targetProxy = 48EA11C51F54F243002FBB13 /* PBXContainerItemProxy */;
+		};
+		48EA11D11F54F243002FBB13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48EA11AC1F54F243002FBB13 /* SuperTrunfo */;
+			targetProxy = 48EA11D01F54F243002FBB13 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		48EA11B41F54F243002FBB13 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48EA11B51F54F243002FBB13 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		48EA11BC1F54F243002FBB13 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48EA11BD1F54F243002FBB13 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48EA11D61F54F243002FBB13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48EA11D71F54F243002FBB13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48EA11D91F54F243002FBB13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SuperTrunfo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rennan.SuperTrunfo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		48EA11DA1F54F243002FBB13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SuperTrunfo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rennan.SuperTrunfo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		48EA11DC1F54F243002FBB13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SuperTrunfoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rennan.SuperTrunfoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperTrunfo.app/SuperTrunfo";
+			};
+			name = Debug;
+		};
+		48EA11DD1F54F243002FBB13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SuperTrunfoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rennan.SuperTrunfoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperTrunfo.app/SuperTrunfo";
+			};
+			name = Release;
+		};
+		48EA11DF1F54F243002FBB13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SuperTrunfoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rennan.SuperTrunfoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SuperTrunfo;
+			};
+			name = Debug;
+		};
+		48EA11E01F54F243002FBB13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SuperTrunfoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rennan.SuperTrunfoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SuperTrunfo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48EA11A81F54F243002FBB13 /* Build configuration list for PBXProject "SuperTrunfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EA11D61F54F243002FBB13 /* Debug */,
+				48EA11D71F54F243002FBB13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48EA11D81F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EA11D91F54F243002FBB13 /* Debug */,
+				48EA11DA1F54F243002FBB13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		48EA11DB1F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EA11DC1F54F243002FBB13 /* Debug */,
+				48EA11DD1F54F243002FBB13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		48EA11DE1F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EA11DF1F54F243002FBB13 /* Debug */,
+				48EA11E01F54F243002FBB13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		48EA11B71F54F243002FBB13 /* SuperTrunfo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48EA11B81F54F243002FBB13 /* SuperTrunfo.xcdatamodel */,
+			);
+			currentVersion = 48EA11B81F54F243002FBB13 /* SuperTrunfo.xcdatamodel */;
+			path = SuperTrunfo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 48EA11A51F54F243002FBB13 /* Project object */;
+}
