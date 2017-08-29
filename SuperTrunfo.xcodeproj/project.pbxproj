@@ -15,6 +15,10 @@
 		48EA11BE1F54F243002FBB13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA11BC1F54F243002FBB13 /* LaunchScreen.storyboard */; };
 		48EA11C91F54F243002FBB13 /* SuperTrunfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11C81F54F243002FBB13 /* SuperTrunfoTests.swift */; };
 		48EA11D41F54F243002FBB13 /* SuperTrunfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11D31F54F243002FBB13 /* SuperTrunfoUITests.swift */; };
+		48EA11E61F54FF61002FBB13 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11E51F54FF61002FBB13 /* RoomController.swift */; };
+		751074131D851D45C2B9152C /* Pods_SuperTrunfoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC06E1A64B4C81D7A9C2310 /* Pods_SuperTrunfoUITests.framework */; };
+		BC5C0A340691C6DFF0453CF0 /* Pods_SuperTrunfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41432D83FF4CBEC6C7D8AAA7 /* Pods_SuperTrunfoTests.framework */; };
+		D89933C92ABAD4D7342FDBAF /* Pods_SuperTrunfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FEEFF9E2588103E6F9F237 /* Pods_SuperTrunfo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		009718C04D7E049FA47CE84C /* Pods-SuperTrunfoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperTrunfoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperTrunfoUITests/Pods-SuperTrunfoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0963598F0410F2309E490363 /* Pods-SuperTrunfoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperTrunfoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperTrunfoUITests/Pods-SuperTrunfoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		14FEEFF9E2588103E6F9F237 /* Pods_SuperTrunfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperTrunfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2256B5E71D8A9AA6F6E29CEC /* Pods-SuperTrunfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperTrunfo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperTrunfo/Pods-SuperTrunfo.release.xcconfig"; sourceTree = "<group>"; };
+		41432D83FF4CBEC6C7D8AAA7 /* Pods_SuperTrunfoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperTrunfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA11AD1F54F243002FBB13 /* SuperTrunfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperTrunfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA11B01F54F243002FBB13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48EA11B21F54F243002FBB13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +58,11 @@
 		48EA11CF1F54F243002FBB13 /* SuperTrunfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperTrunfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA11D31F54F243002FBB13 /* SuperTrunfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTrunfoUITests.swift; sourceTree = "<group>"; };
 		48EA11D51F54F243002FBB13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48EA11E51F54FF61002FBB13 /* RoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomController.swift; path = Controllers/RoomController.swift; sourceTree = "<group>"; };
+		9E3C482747C5F4F3582BFF1E /* Pods-SuperTrunfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperTrunfoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperTrunfoTests/Pods-SuperTrunfoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ADC06E1A64B4C81D7A9C2310 /* Pods_SuperTrunfoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperTrunfoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6040A4646719A5A27AEB269 /* Pods-SuperTrunfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperTrunfoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperTrunfoTests/Pods-SuperTrunfoTests.release.xcconfig"; sourceTree = "<group>"; };
+		B833C6A06EE24EB09DDFE4D0 /* Pods-SuperTrunfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperTrunfo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperTrunfo/Pods-SuperTrunfo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89933C92ABAD4D7342FDBAF /* Pods_SuperTrunfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC5C0A340691C6DFF0453CF0 /* Pods_SuperTrunfoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +86,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751074131D851D45C2B9152C /* Pods_SuperTrunfoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16E6BBBCC18C39195056B1FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B833C6A06EE24EB09DDFE4D0 /* Pods-SuperTrunfo.debug.xcconfig */,
+				2256B5E71D8A9AA6F6E29CEC /* Pods-SuperTrunfo.release.xcconfig */,
+				9E3C482747C5F4F3582BFF1E /* Pods-SuperTrunfoTests.debug.xcconfig */,
+				B6040A4646719A5A27AEB269 /* Pods-SuperTrunfoTests.release.xcconfig */,
+				009718C04D7E049FA47CE84C /* Pods-SuperTrunfoUITests.debug.xcconfig */,
+				0963598F0410F2309E490363 /* Pods-SuperTrunfoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		48EA11A41F54F243002FBB13 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +113,8 @@
 				48EA11C71F54F243002FBB13 /* SuperTrunfoTests */,
 				48EA11D21F54F243002FBB13 /* SuperTrunfoUITests */,
 				48EA11AE1F54F243002FBB13 /* Products */,
+				16E6BBBCC18C39195056B1FB /* Pods */,
+				9220C61EA40C6A32276367EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,11 +131,12 @@
 		48EA11AF1F54F243002FBB13 /* SuperTrunfo */ = {
 			isa = PBXGroup;
 			children = (
+				48EA11E41F54FF1A002FBB13 /* Controllers */,
+				48EA11E31F54F9B7002FBB13 /* Views */,
+				48EA11E21F54F994002FBB13 /* Store */,
+				48EA11E11F54F970002FBB13 /* Models */,
 				48EA11B01F54F243002FBB13 /* AppDelegate.swift */,
-				48EA11B21F54F243002FBB13 /* ViewController.swift */,
-				48EA11B41F54F243002FBB13 /* Main.storyboard */,
 				48EA11BA1F54F243002FBB13 /* Assets.xcassets */,
-				48EA11BC1F54F243002FBB13 /* LaunchScreen.storyboard */,
 				48EA11BF1F54F243002FBB13 /* Info.plist */,
 				48EA11B71F54F243002FBB13 /* SuperTrunfo.xcdatamodeld */,
 			);
@@ -128,6 +161,48 @@
 			path = SuperTrunfoUITests;
 			sourceTree = "<group>";
 		};
+		48EA11E11F54F970002FBB13 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		48EA11E21F54F994002FBB13 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
+		48EA11E31F54F9B7002FBB13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48EA11B41F54F243002FBB13 /* Main.storyboard */,
+				48EA11BC1F54F243002FBB13 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		48EA11E41F54FF1A002FBB13 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				48EA11B21F54F243002FBB13 /* ViewController.swift */,
+				48EA11E51F54FF61002FBB13 /* RoomController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9220C61EA40C6A32276367EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14FEEFF9E2588103E6F9F237 /* Pods_SuperTrunfo.framework */,
+				41432D83FF4CBEC6C7D8AAA7 /* Pods_SuperTrunfoTests.framework */,
+				ADC06E1A64B4C81D7A9C2310 /* Pods_SuperTrunfoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48EA11D81F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfo" */;
 			buildPhases = (
+				18F71B1EC36AD2FB5AC36601 /* [CP] Check Pods Manifest.lock */,
 				48EA11A91F54F243002FBB13 /* Sources */,
 				48EA11AA1F54F243002FBB13 /* Frameworks */,
 				48EA11AB1F54F243002FBB13 /* Resources */,
+				93F73508B6A11397A87C6E29 /* [CP] Embed Pods Frameworks */,
+				CAC73C43EC627A2F2239C1BF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48EA11DB1F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfoTests" */;
 			buildPhases = (
+				00C6E9BC00B9B1E520C3EEC3 /* [CP] Check Pods Manifest.lock */,
 				48EA11C01F54F243002FBB13 /* Sources */,
 				48EA11C11F54F243002FBB13 /* Frameworks */,
 				48EA11C21F54F243002FBB13 /* Resources */,
+				9DA80155A545C0FD9C36C45A /* [CP] Embed Pods Frameworks */,
+				3004CAE3D19455ED0AD4200C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48EA11DE1F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfoUITests" */;
 			buildPhases = (
+				AB7FF24510CC48BB543576D4 /* [CP] Check Pods Manifest.lock */,
 				48EA11CB1F54F243002FBB13 /* Sources */,
 				48EA11CC1F54F243002FBB13 /* Frameworks */,
 				48EA11CD1F54F243002FBB13 /* Resources */,
+				808B80E345DB12A271EB8B81 /* [CP] Embed Pods Frameworks */,
+				03DE0B0668AA68F98BBA7FC9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,11 +341,159 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00C6E9BC00B9B1E520C3EEC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperTrunfoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		03DE0B0668AA68F98BBA7FC9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfoUITests/Pods-SuperTrunfoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		18F71B1EC36AD2FB5AC36601 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperTrunfo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3004CAE3D19455ED0AD4200C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfoTests/Pods-SuperTrunfoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		808B80E345DB12A271EB8B81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfoUITests/Pods-SuperTrunfoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93F73508B6A11397A87C6E29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfo/Pods-SuperTrunfo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DA80155A545C0FD9C36C45A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfoTests/Pods-SuperTrunfoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB7FF24510CC48BB543576D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperTrunfoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAC73C43EC627A2F2239C1BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfo/Pods-SuperTrunfo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		48EA11A91F54F243002FBB13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48EA11E61F54FF61002FBB13 /* RoomController.swift in Sources */,
 				48EA11B31F54F243002FBB13 /* ViewController.swift in Sources */,
 				48EA11B91F54F243002FBB13 /* SuperTrunfo.xcdatamodeld in Sources */,
 				48EA11B11F54F243002FBB13 /* AppDelegate.swift in Sources */,
@@ -416,6 +648,7 @@
 		};
 		48EA11D91F54F243002FBB13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B833C6A06EE24EB09DDFE4D0 /* Pods-SuperTrunfo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SuperTrunfo/Info.plist;
@@ -428,6 +661,7 @@
 		};
 		48EA11DA1F54F243002FBB13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2256B5E71D8A9AA6F6E29CEC /* Pods-SuperTrunfo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SuperTrunfo/Info.plist;
@@ -440,6 +674,7 @@
 		};
 		48EA11DC1F54F243002FBB13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E3C482747C5F4F3582BFF1E /* Pods-SuperTrunfoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +689,7 @@
 		};
 		48EA11DD1F54F243002FBB13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6040A4646719A5A27AEB269 /* Pods-SuperTrunfoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -468,6 +704,7 @@
 		};
 		48EA11DF1F54F243002FBB13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 009718C04D7E049FA47CE84C /* Pods-SuperTrunfoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SuperTrunfoUITests/Info.plist;
@@ -481,6 +718,7 @@
 		};
 		48EA11E01F54F243002FBB13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0963598F0410F2309E490363 /* Pods-SuperTrunfoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SuperTrunfoUITests/Info.plist;
@@ -511,6 +749,7 @@
 				48EA11DA1F54F243002FBB13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48EA11DB1F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfoTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +758,7 @@
 				48EA11DD1F54F243002FBB13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48EA11DE1F54F243002FBB13 /* Build configuration list for PBXNativeTarget "SuperTrunfoUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +767,7 @@
 				48EA11E01F54F243002FBB13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
