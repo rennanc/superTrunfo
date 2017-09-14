@@ -10,6 +10,9 @@
 		48500F9D1F5646A300DCDB74 /* RoomCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48500F9C1F5646A300DCDB74 /* RoomCustomCell.xib */; };
 		48500FA11F56497300DCDB74 /* RoomUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48500FA01F56497300DCDB74 /* RoomUITableViewCell.swift */; };
 		48D663491F6B320900F695A2 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D663481F6B320900F695A2 /* RoomController.swift */; };
+		48D6634B1F6B40A300F695A2 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D6634A1F6B40A300F695A2 /* Room.swift */; };
+		48D6634D1F6B449000F695A2 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D6634C1F6B449000F695A2 /* Card.swift */; };
+		48D6634F1F6B45E900F695A2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D6634E1F6B45E900F695A2 /* Game.swift */; };
 		48EA11B11F54F243002FBB13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11B01F54F243002FBB13 /* AppDelegate.swift */; };
 		48EA11B31F54F243002FBB13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11B21F54F243002FBB13 /* ViewController.swift */; };
 		48EA11B61F54F243002FBB13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA11B41F54F243002FBB13 /* Main.storyboard */; };
@@ -79,6 +82,9 @@
 		48500F9C1F5646A300DCDB74 /* RoomCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomCustomCell.xib; path = Views/RoomCustomCell.xib; sourceTree = "<group>"; };
 		48500FA01F56497300DCDB74 /* RoomUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomUITableViewCell.swift; path = Controllers/RoomUITableViewCell.swift; sourceTree = "<group>"; };
 		48D663481F6B320900F695A2 /* RoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomController.swift; path = Controllers/RoomController.swift; sourceTree = "<group>"; };
+		48D6634A1F6B40A300F695A2 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = Models/Room.swift; sourceTree = "<group>"; };
+		48D6634C1F6B449000F695A2 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = Models/Card.swift; sourceTree = "<group>"; };
+		48D6634E1F6B45E900F695A2 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Models/Game.swift; sourceTree = "<group>"; };
 		48EA11AD1F54F243002FBB13 /* SuperTrunfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperTrunfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA11B01F54F243002FBB13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48EA11B21F54F243002FBB13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +232,9 @@
 		48EA11E11F54F970002FBB13 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				48D6634A1F6B40A300F695A2 /* Room.swift */,
+				48D6634C1F6B449000F695A2 /* Card.swift */,
+				48D6634E1F6B45E900F695A2 /* Game.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -601,11 +610,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				48EA11E61F54FF61002FBB13 /* LobbyController.swift in Sources */,
+				48D6634F1F6B45E900F695A2 /* Game.swift in Sources */,
 				48EA11B31F54F243002FBB13 /* ViewController.swift in Sources */,
+				48D6634B1F6B40A300F695A2 /* Room.swift in Sources */,
 				48EA11B91F54F243002FBB13 /* SuperTrunfo.xcdatamodeld in Sources */,
 				48EA11B11F54F243002FBB13 /* AppDelegate.swift in Sources */,
 				48D663491F6B320900F695A2 /* RoomController.swift in Sources */,
 				48500FA11F56497300DCDB74 /* RoomUITableViewCell.swift in Sources */,
+				48D6634D1F6B449000F695A2 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
