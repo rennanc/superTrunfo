@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48500F9D1F5646A300DCDB74 /* RoomCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48500F9C1F5646A300DCDB74 /* RoomCustomCell.xib */; };
+		48500FA11F56497300DCDB74 /* RoomUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48500FA01F56497300DCDB74 /* RoomUITableViewCell.swift */; };
+		48D663491F6B320900F695A2 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D663481F6B320900F695A2 /* RoomController.swift */; };
 		48EA11B11F54F243002FBB13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11B01F54F243002FBB13 /* AppDelegate.swift */; };
 		48EA11B31F54F243002FBB13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11B21F54F243002FBB13 /* ViewController.swift */; };
 		48EA11B61F54F243002FBB13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA11B41F54F243002FBB13 /* Main.storyboard */; };
@@ -15,13 +18,41 @@
 		48EA11BE1F54F243002FBB13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA11BC1F54F243002FBB13 /* LaunchScreen.storyboard */; };
 		48EA11C91F54F243002FBB13 /* SuperTrunfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11C81F54F243002FBB13 /* SuperTrunfoTests.swift */; };
 		48EA11D41F54F243002FBB13 /* SuperTrunfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11D31F54F243002FBB13 /* SuperTrunfoUITests.swift */; };
-		48EA11E61F54FF61002FBB13 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11E51F54FF61002FBB13 /* RoomController.swift */; };
+		48EA11E61F54FF61002FBB13 /* LobbyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11E51F54FF61002FBB13 /* LobbyController.swift */; };
 		751074131D851D45C2B9152C /* Pods_SuperTrunfoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC06E1A64B4C81D7A9C2310 /* Pods_SuperTrunfoUITests.framework */; };
 		BC5C0A340691C6DFF0453CF0 /* Pods_SuperTrunfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41432D83FF4CBEC6C7D8AAA7 /* Pods_SuperTrunfoTests.framework */; };
-		D89933C92ABAD4D7342FDBAF /* Pods_SuperTrunfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FEEFF9E2588103E6F9F237 /* Pods_SuperTrunfo.framework */; };
+		EA2FFF1B4B4F9C1F0B70311F /* Pods_SuperTrunfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FEEFF9E2588103E6F9F237 /* Pods_SuperTrunfo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		48500F961F56381E00DCDB74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 967BC7C7612C656A52F5C47B803DA7E2;
+			remoteInfo = "Pods-SuperTrunfo";
+		};
+		48500F981F56381E00DCDB74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E07AA60C946095644285813152A9A828;
+			remoteInfo = "Pods-SuperTrunfoTests";
+		};
+		48500F9A1F56381E00DCDB74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EF465BD7CD1FF4C2AD45202818F33613;
+			remoteInfo = "Pods-SuperTrunfoUITests";
+		};
+		48D663461F6B31BC00F695A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A05AE8EFE0923B33050DE564177B172;
+			remoteInfo = Alamofire;
+		};
 		48EA11C51F54F243002FBB13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48EA11A51F54F243002FBB13 /* Project object */;
@@ -44,6 +75,10 @@
 		14FEEFF9E2588103E6F9F237 /* Pods_SuperTrunfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperTrunfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2256B5E71D8A9AA6F6E29CEC /* Pods-SuperTrunfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperTrunfo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperTrunfo/Pods-SuperTrunfo.release.xcconfig"; sourceTree = "<group>"; };
 		41432D83FF4CBEC6C7D8AAA7 /* Pods_SuperTrunfoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperTrunfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48500F901F56381E00DCDB74 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		48500F9C1F5646A300DCDB74 /* RoomCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomCustomCell.xib; path = Views/RoomCustomCell.xib; sourceTree = "<group>"; };
+		48500FA01F56497300DCDB74 /* RoomUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomUITableViewCell.swift; path = Controllers/RoomUITableViewCell.swift; sourceTree = "<group>"; };
+		48D663481F6B320900F695A2 /* RoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomController.swift; path = Controllers/RoomController.swift; sourceTree = "<group>"; };
 		48EA11AD1F54F243002FBB13 /* SuperTrunfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperTrunfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA11B01F54F243002FBB13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48EA11B21F54F243002FBB13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +93,7 @@
 		48EA11CF1F54F243002FBB13 /* SuperTrunfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperTrunfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA11D31F54F243002FBB13 /* SuperTrunfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTrunfoUITests.swift; sourceTree = "<group>"; };
 		48EA11D51F54F243002FBB13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48EA11E51F54FF61002FBB13 /* RoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomController.swift; path = Controllers/RoomController.swift; sourceTree = "<group>"; };
+		48EA11E51F54FF61002FBB13 /* LobbyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LobbyController.swift; path = Controllers/LobbyController.swift; sourceTree = "<group>"; };
 		9E3C482747C5F4F3582BFF1E /* Pods-SuperTrunfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperTrunfoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperTrunfoTests/Pods-SuperTrunfoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADC06E1A64B4C81D7A9C2310 /* Pods_SuperTrunfoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperTrunfoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6040A4646719A5A27AEB269 /* Pods-SuperTrunfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperTrunfoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperTrunfoTests/Pods-SuperTrunfoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D89933C92ABAD4D7342FDBAF /* Pods_SuperTrunfo.framework in Frameworks */,
+				EA2FFF1B4B4F9C1F0B70311F /* Pods_SuperTrunfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +139,33 @@
 				0963598F0410F2309E490363 /* Pods-SuperTrunfoUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		48500F911F56381E00DCDB74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48D663471F6B31BC00F695A2 /* Alamofire.framework */,
+				48500F971F56381E00DCDB74 /* Pods_SuperTrunfo.framework */,
+				48500F991F56381E00DCDB74 /* Pods_SuperTrunfoTests.framework */,
+				48500F9B1F56381E00DCDB74 /* Pods_SuperTrunfoUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48500F9E1F56492600DCDB74 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				48500FA01F56497300DCDB74 /* RoomUITableViewCell.swift */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		48500F9F1F56493400DCDB74 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				48500F9C1F5646A300DCDB74 /* RoomCustomCell.xib */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 		48EA11A41F54F243002FBB13 = {
@@ -178,6 +240,7 @@
 		48EA11E31F54F9B7002FBB13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48500F9F1F56493400DCDB74 /* CustomCells */,
 				48EA11B41F54F243002FBB13 /* Main.storyboard */,
 				48EA11BC1F54F243002FBB13 /* LaunchScreen.storyboard */,
 			);
@@ -187,8 +250,10 @@
 		48EA11E41F54FF1A002FBB13 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				48500F9E1F56492600DCDB74 /* CustomCells */,
 				48EA11B21F54F243002FBB13 /* ViewController.swift */,
-				48EA11E51F54FF61002FBB13 /* RoomController.swift */,
+				48EA11E51F54FF61002FBB13 /* LobbyController.swift */,
+				48D663481F6B320900F695A2 /* RoomController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +261,7 @@
 		9220C61EA40C6A32276367EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48500F901F56381E00DCDB74 /* Pods.xcodeproj */,
 				14FEEFF9E2588103E6F9F237 /* Pods_SuperTrunfo.framework */,
 				41432D83FF4CBEC6C7D8AAA7 /* Pods_SuperTrunfoTests.framework */,
 				ADC06E1A64B4C81D7A9C2310 /* Pods_SuperTrunfoUITests.framework */,
@@ -305,6 +371,12 @@
 			mainGroup = 48EA11A41F54F243002FBB13;
 			productRefGroup = 48EA11AE1F54F243002FBB13 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 48500F911F56381E00DCDB74 /* Products */;
+					ProjectRef = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				48EA11AC1F54F243002FBB13 /* SuperTrunfo */,
@@ -314,6 +386,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		48500F971F56381E00DCDB74 /* Pods_SuperTrunfo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_SuperTrunfo.framework;
+			remoteRef = 48500F961F56381E00DCDB74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		48500F991F56381E00DCDB74 /* Pods_SuperTrunfoTests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_SuperTrunfoTests.framework;
+			remoteRef = 48500F981F56381E00DCDB74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		48500F9B1F56381E00DCDB74 /* Pods_SuperTrunfoUITests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_SuperTrunfoUITests.framework;
+			remoteRef = 48500F9A1F56381E00DCDB74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		48D663471F6B31BC00F695A2 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 48D663461F6B31BC00F695A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		48EA11AB1F54F243002FBB13 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -322,6 +425,7 @@
 				48EA11BE1F54F243002FBB13 /* LaunchScreen.storyboard in Resources */,
 				48EA11BB1F54F243002FBB13 /* Assets.xcassets in Resources */,
 				48EA11B61F54F243002FBB13 /* Main.storyboard in Resources */,
+				48500F9D1F5646A300DCDB74 /* RoomCustomCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,9 +533,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfo/Pods-SuperTrunfo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -493,10 +600,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48EA11E61F54FF61002FBB13 /* RoomController.swift in Sources */,
+				48EA11E61F54FF61002FBB13 /* LobbyController.swift in Sources */,
 				48EA11B31F54F243002FBB13 /* ViewController.swift in Sources */,
 				48EA11B91F54F243002FBB13 /* SuperTrunfo.xcdatamodeld in Sources */,
 				48EA11B11F54F243002FBB13 /* AppDelegate.swift in Sources */,
+				48D663491F6B320900F695A2 /* RoomController.swift in Sources */,
+				48500FA11F56497300DCDB74 /* RoomUITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
