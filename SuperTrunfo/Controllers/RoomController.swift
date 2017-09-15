@@ -20,6 +20,8 @@ class RoomController : UIViewController{
     @IBOutlet weak var labelSkill4: UILabel!
     @IBOutlet weak var labelSkill5: UILabel!
     
+    var listOfSkills = [UILabel]()
+    
     
     //itens de tela do jogador
     @IBOutlet weak var labelNumberOfCards: UILabel!
@@ -33,10 +35,32 @@ class RoomController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    //configura acoes de gesto para as labels de skill
+    func setupSkillsTapGesture(){
+        //definindo quais labels receberao a funca
+        listOfSkills = [UILabel](arrayLiteral: labelSkill1,
+                                 labelSkill2,
+                                 labelSkill3,
+                                 labelSkill4,
+                                 labelSkill5)
+        
+        for labelSkill in listOfSkills{
+            let tapGesture =  UITapGestureRecognizer(target: self, action: #selector(self.selectSkill))
+            tapGesture.isEnabled = true
+            labelSkill.addGestureRecognizer(tapGesture)
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func selectSkill(sender: UITapGestureRecognizer){
+        var selectedLabel : UIView = sender.view!
+        print("tap funcionando. tag: " + String(selectedLabel.tag))
     }
     
     

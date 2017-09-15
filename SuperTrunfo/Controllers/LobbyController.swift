@@ -64,9 +64,18 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     
-    //obtem a sala selecionada
+    //envia para a sala selecionada
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+        
+        //obtendo a instancia da controller
+        let controllerToSend = storyboard?.instantiateViewController(withIdentifier: "Room") as! RoomController
+        
+        //recuperando objeto selecionado
+        let room = arrayOfRooms[indexPath.row]
+        controllerToSend.navigationItem.prompt = room.name
+        
+        //entrando na sala escolhida
+        navigationController?.pushViewController(controllerToSend, animated: true)
     }
     
 }
