@@ -151,7 +151,7 @@
                                         <rect key="frame" x="8" y="49" width="275" height="262"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Força" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwI-Lc-7Wo">
+                                    <label opaque="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Força" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwI-Lc-7Wo">
                                         <rect key="frame" x="8" y="319" width="140" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="DbA-et-XXd"/>
@@ -160,7 +160,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velocidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwb-mt-2ZH">
+                                    <label opaque="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velocidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwb-mt-2ZH">
                                         <rect key="frame" x="8" y="348" width="140" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="cZr-Ts-eOK"/>
@@ -169,7 +169,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habilidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9x-zg-KP2">
+                                    <label opaque="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habilidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9x-zg-KP2">
                                         <rect key="frame" x="8" y="377" width="140" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="2GF-ci-onn"/>
@@ -178,7 +178,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAz-Kf-oZc">
+                                    <label opaque="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAz-Kf-oZc">
                                         <rect key="frame" x="8" y="406" width="140" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="RrG-5g-1LJ"/>
@@ -187,7 +187,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inteligência" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUk-JS-3fp">
+                                    <label opaque="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inteligência" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUk-JS-3fp">
                                         <rect key="frame" x="8" y="435" width="140" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="JJg-FQ-CQu"/>
@@ -311,11 +311,16 @@
                         <outlet property="labelNumDefeat" destination="rE0-qS-id6" id="YB1-Ml-los"/>
                         <outlet property="labelNumWinner" destination="1Ty-Ez-CeW" id="FI2-p8-OZ1"/>
                         <outlet property="labelNumberOfCards" destination="o10-mi-ecz" id="SaU-As-7vg"/>
-                        <outlet property="labelSkill1" destination="n3T-ff-ZlC" id="WUZ-cg-a4S"/>
-                        <outlet property="labelSkill2" destination="M4z-4O-Y3v" id="jAU-OG-X2Z"/>
-                        <outlet property="labelSkill3" destination="WTx-cw-EwI" id="SnY-rw-jkd"/>
-                        <outlet property="labelSkill4" destination="4aY-9b-Jc3" id="4Vo-rH-iRZ"/>
-                        <outlet property="labelSkill5" destination="eO7-CX-eXG" id="UGa-pZ-ThX"/>
+                        <outlet property="labelSkill1" destination="FwI-Lc-7Wo" id="Ate-na-Ec0"/>
+                        <outlet property="labelSkill2" destination="kwb-mt-2ZH" id="Lsp-Qg-zUm"/>
+                        <outlet property="labelSkill3" destination="T9x-zg-KP2" id="dm1-ne-WD4"/>
+                        <outlet property="labelSkill4" destination="KAz-Kf-oZc" id="DmA-7E-LCE"/>
+                        <outlet property="labelSkill5" destination="wUk-JS-3fp" id="sXt-i4-E5k"/>
+                        <outlet property="labelSkillValue1" destination="n3T-ff-ZlC" id="oe2-FL-iyH"/>
+                        <outlet property="labelSkillValue2" destination="M4z-4O-Y3v" id="0Ij-QF-R4Y"/>
+                        <outlet property="labelSkillValue3" destination="WTx-cw-EwI" id="v2T-oU-iFW"/>
+                        <outlet property="labelSkillValue4" destination="4aY-9b-Jc3" id="sIZ-bK-SQR"/>
+                        <outlet property="labelSkillValue5" destination="eO7-CX-eXG" id="w8U-YL-6q7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuC-xj-M0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -325,7 +330,7 @@
         <!--Resultado-->
         <scene sceneID="ooY-i7-IZG">
             <objects>
-                <viewController modalPresentationStyle="currentContext" id="4vX-KP-2rb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Battle" modalPresentationStyle="currentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4vX-KP-2rb" customClass="BattleController" customModule="SuperTrunfo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NKX-lO-BtW"/>
                         <viewControllerLayoutGuide type="bottom" id="jY2-pw-D1Z"/>
@@ -441,10 +446,69 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="imageChallenger" destination="dNQ-dG-oKi" id="7rs-lj-LCe"/>
+                        <outlet property="imagePlayer" destination="c0o-am-u0u" id="5vN-ph-q91"/>
+                        <outlet property="labelChallengerNameSkill" destination="ymL-Ht-HdR" id="Dvz-Ku-xP0"/>
+                        <outlet property="labelChallengerValueSkill" destination="Lta-VI-WMO" id="jHx-ib-h70"/>
+                        <outlet property="labelPlayerNameSkill" destination="oQp-b1-F2t" id="0tM-jZ-w3q"/>
+                        <outlet property="labelPlayerValueSkill" destination="w4M-7F-KPW" id="ffz-mT-evL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bR-1y-kgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4920.8000000000002" y="999.85007496251887"/>
+        </scene>
+        <!--Login Controller-->
+        <scene sceneID="SH9-H3-kMB">
+            <objects>
+                <viewController id="9nv-m7-qX5" customClass="LoginController" customModule="SuperTrunfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qKk-mn-icd"/>
+                        <viewControllerLayoutGuide type="bottom" id="DL6-pu-8Mg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2iN-ky-X3m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g13-zp-das">
+                                <rect key="frame" x="166" y="394" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Entrar"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68L-FV-Y3O">
+                                <rect key="frame" x="60" y="310" width="258" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uop-6f-YdI">
+                                <rect key="frame" x="60" y="356" width="258" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Super Cartas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slo-5t-dtD">
+                                <rect key="frame" x="60" y="148" width="258" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiD-JY-5ye">
+                                <rect key="frame" x="60" y="473" width="258" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Entrar com Facebook"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGo-XH-T5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-546.39999999999998" y="792.95352323838085"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kvq-pE-uZ9">
