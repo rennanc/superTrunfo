@@ -9,7 +9,7 @@
 import UIKit
 
 struct PlayerMove {
-    let image: UIImage!
-    let nameSkill: String!
-    let valueSkill: String!
+    var image: UIImage!
+    var nameSkill: String!
+    var valueSkill: String!
 }

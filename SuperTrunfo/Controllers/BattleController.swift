@@ -29,9 +29,22 @@ class BattleController : UIViewController{
     let challengerMove : PlayerMove! = nil
     
     //atributos do jogador deste proprio dispositivo
-    let playerMove: PlayerMove! = nil
+    var playerMove: PlayerMove! = nil
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if playerMove != nil {
+            imagePlayer.image = playerMove.image
+            labelPlayerNameSkill.text = playerMove.nameSkill
+            labelPlayerValueSkill.text = playerMove.valueSkill
+        }
+        
+    }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
 }
