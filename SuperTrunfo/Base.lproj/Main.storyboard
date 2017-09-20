@@ -57,7 +57,9 @@
                             <constraint firstItem="TXZ-pv-Cdy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yjx-sV-V9F"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Escolha Uma sala" id="wkr-Oc-rXB"/>
+                    <navigationItem key="navigationItem" title="Escolha Uma sala" id="wkr-Oc-rXB">
+                        <barButtonItem key="backBarButtonItem" title="Sair" id="RAc-Co-JDe"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableRooms" destination="TXZ-pv-Cdy" id="EAH-vK-vwX"/>
                     </connections>
@@ -201,79 +203,118 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="953-XL-3I3" userLabel="ViewCards">
                                         <rect key="frame" x="0.0" y="23" width="375" height="74"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkm-Jb-vI0" userLabel="ViewCard1">
+                                            <view contentMode="scaleToFill" restorationIdentifier="card1" translatesAutoresizingMaskIntoConstraints="NO" id="Bkm-Jb-vI0" userLabel="ViewCard1">
                                                 <rect key="frame" x="8" y="1" width="53" height="72"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o49-HO-4tW">
+                                                    <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageCard1" translatesAutoresizingMaskIntoConstraints="NO" id="o49-HO-4tW">
                                                         <rect key="frame" x="0.0" y="7" width="53" height="49"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <gestureRecognizers/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.27348586409999998" blue="0.23079774489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="card1">
+                                                    <accessibilityTraits key="traits" button="YES"/>
+                                                </accessibility>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="o49-HO-4tW" secondAttribute="bottom" constant="16" id="2SC-er-pck"/>
                                                     <constraint firstAttribute="width" constant="53" id="9Wn-Cr-myh"/>
+                                                    <constraint firstItem="o49-HO-4tW" firstAttribute="top" secondItem="Bkm-Jb-vI0" secondAttribute="top" constant="7" id="J3h-DU-7BL"/>
+                                                    <constraint firstItem="o49-HO-4tW" firstAttribute="leading" secondItem="Bkm-Jb-vI0" secondAttribute="leading" id="LhL-2E-Mbt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="o49-HO-4tW" secondAttribute="trailing" id="jS4-au-chA"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03r-qk-llm" userLabel="ViewCard2">
+                                            <view contentMode="scaleToFill" restorationIdentifier="card2" translatesAutoresizingMaskIntoConstraints="NO" id="03r-qk-llm" userLabel="ViewCard2">
                                                 <rect key="frame" x="69" y="1" width="53" height="72"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYj-Lg-aJ7">
+                                                    <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageCard2" translatesAutoresizingMaskIntoConstraints="NO" id="PYj-Lg-aJ7">
                                                         <rect key="frame" x="0.0" y="7" width="53" height="49"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.27348586409999998" blue="0.23079774489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="card2">
+                                                    <accessibilityTraits key="traits" button="YES"/>
+                                                </accessibility>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="PYj-Lg-aJ7" secondAttribute="bottom" constant="16" id="7cg-M1-fa2"/>
+                                                    <constraint firstItem="PYj-Lg-aJ7" firstAttribute="leading" secondItem="03r-qk-llm" secondAttribute="leading" id="BM3-bT-MSB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PYj-Lg-aJ7" secondAttribute="trailing" id="HwL-jO-gcN"/>
+                                                    <constraint firstItem="PYj-Lg-aJ7" firstAttribute="top" secondItem="03r-qk-llm" secondAttribute="top" constant="7" id="NPE-xQ-4Vu"/>
                                                     <constraint firstAttribute="width" constant="53" id="Sdo-xF-MuI"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-Wg-K9H" userLabel="ViewCard3">
+                                            <view contentMode="scaleToFill" restorationIdentifier="card3" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-Wg-K9H" userLabel="ViewCard3">
                                                 <rect key="frame" x="130" y="1" width="53" height="72"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bGh-Uc-tX3">
+                                                    <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageCard3" translatesAutoresizingMaskIntoConstraints="NO" id="bGh-Uc-tX3">
                                                         <rect key="frame" x="0.0" y="7" width="53" height="49"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.27348586409999998" blue="0.23079774489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="card3">
+                                                    <accessibilityTraits key="traits" button="YES"/>
+                                                </accessibility>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="bGh-Uc-tX3" secondAttribute="bottom" constant="16" id="7QJ-u3-1Rk"/>
                                                     <constraint firstAttribute="width" constant="53" id="Ymb-XS-cgd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bGh-Uc-tX3" secondAttribute="trailing" id="ZUS-Ns-hY1"/>
+                                                    <constraint firstItem="bGh-Uc-tX3" firstAttribute="top" secondItem="D9p-Wg-K9H" secondAttribute="top" constant="7" id="b5L-8b-85A"/>
+                                                    <constraint firstItem="bGh-Uc-tX3" firstAttribute="leading" secondItem="D9p-Wg-K9H" secondAttribute="leading" id="gic-WN-Ise"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2G8-3t-Qkz" userLabel="ViewCard4">
+                                            <view contentMode="scaleToFill" restorationIdentifier="card4" translatesAutoresizingMaskIntoConstraints="NO" id="2G8-3t-Qkz" userLabel="ViewCard4">
                                                 <rect key="frame" x="192" y="1" width="53" height="72"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n0n-Wj-Mee">
+                                                    <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageCard4" translatesAutoresizingMaskIntoConstraints="NO" id="n0n-Wj-Mee">
                                                         <rect key="frame" x="0.0" y="7" width="53" height="49"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.27348586409999998" blue="0.23079774489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="card4">
+                                                    <accessibilityTraits key="traits" button="YES"/>
+                                                </accessibility>
                                                 <constraints>
+                                                    <constraint firstItem="n0n-Wj-Mee" firstAttribute="leading" secondItem="2G8-3t-Qkz" secondAttribute="leading" id="Atb-Fr-YwI"/>
+                                                    <constraint firstItem="n0n-Wj-Mee" firstAttribute="top" secondItem="2G8-3t-Qkz" secondAttribute="top" constant="7" id="HE7-HS-Geh"/>
                                                     <constraint firstAttribute="width" constant="53" id="MDg-18-vzP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="n0n-Wj-Mee" secondAttribute="bottom" constant="16" id="Pa6-kS-U2B"/>
+                                                    <constraint firstAttribute="trailing" secondItem="n0n-Wj-Mee" secondAttribute="trailing" id="laZ-B8-wGa"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1n-W8-fRS" userLabel="ViewCard5">
+                                            <view contentMode="scaleToFill" restorationIdentifier="card5" translatesAutoresizingMaskIntoConstraints="NO" id="i1n-W8-fRS" userLabel="ViewCard5">
                                                 <rect key="frame" x="253" y="0.0" width="53" height="73"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="szk-R8-A4O">
-                                                        <rect key="frame" x="0.0" y="7" width="53" height="49"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <imageView tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageCard5" translatesAutoresizingMaskIntoConstraints="NO" id="szk-R8-A4O">
+                                                        <rect key="frame" x="0.0" y="7" width="53" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.27348586409999998" blue="0.23079774489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="card5">
+                                                    <accessibilityTraits key="traits" button="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="szk-R8-A4O" secondAttribute="bottom" constant="16" id="9cq-LU-s0X"/>
+                                                    <constraint firstAttribute="trailing" secondItem="szk-R8-A4O" secondAttribute="trailing" id="Iza-cM-7TN"/>
+                                                    <constraint firstItem="szk-R8-A4O" firstAttribute="top" secondItem="i1n-W8-fRS" secondAttribute="top" constant="7" id="La8-1I-V10"/>
+                                                    <constraint firstItem="szk-R8-A4O" firstAttribute="leading" secondItem="i1n-W8-fRS" secondAttribute="leading" id="PM9-pS-aLh"/>
+                                                </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEu-OO-jG5" userLabel="ViewCard6">
+                                            <view contentMode="scaleToFill" restorationIdentifier="card6" translatesAutoresizingMaskIntoConstraints="NO" id="eEu-OO-jG5" userLabel="ViewCard6">
                                                 <rect key="frame" x="314" y="0.0" width="53" height="73"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-kQ-JHF">
-                                                        <rect key="frame" x="0.0" y="7" width="53" height="49"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <imageView tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageCard6" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-kQ-JHF">
+                                                        <rect key="frame" x="0.0" y="7" width="53" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.27348586409999998" blue="0.23079774489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="card6">
+                                                    <accessibilityTraits key="traits" button="YES"/>
+                                                </accessibility>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="GVb-kQ-JHF" secondAttribute="trailing" id="Wwd-Rj-16s"/>
+                                                    <constraint firstItem="GVb-kQ-JHF" firstAttribute="leading" secondItem="eEu-OO-jG5" secondAttribute="leading" id="daH-Tb-QEm"/>
                                                     <constraint firstAttribute="width" constant="53" id="py6-XC-cV5"/>
+                                                    <constraint firstItem="GVb-kQ-JHF" firstAttribute="top" secondItem="eEu-OO-jG5" secondAttribute="top" constant="7" id="rYv-pB-r01"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GVb-kQ-JHF" secondAttribute="bottom" constant="16" id="sSc-Km-2p2"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -314,6 +355,9 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstItem="953-XL-3I3" firstAttribute="top" secondItem="Hkp-LI-W40" secondAttribute="bottom" constant="8.5" id="6cV-9E-O3h"/>
                                     <constraint firstItem="Hkp-LI-W40" firstAttribute="top" secondItem="BvN-ax-5Ey" secondAttribute="top" id="8ey-wA-7Sc"/>
@@ -406,14 +450,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Escolha uma Habilidade" prompt="Sala de Jogo #1" id="ma8-D2-phU">
-                        <barButtonItem key="backBarButtonItem" title="Sair" id="cGB-11-GLm"/>
-                        <barButtonItem key="rightBarButtonItem" title="Enviar" id="4bP-Cy-E25">
-                            <connections>
-                                <segue destination="PBF-3b-VMK" kind="popoverPresentation" popoverAnchorBarButtonItem="4bP-Cy-E25" id="knR-vD-yT3">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title="Sair" id="I7D-r9-DwB"/>
                     </navigationItem>
                     <connections>
                         <outlet property="imageCard1" destination="o49-HO-4tW" id="Hag-W9-8Tl"/>
@@ -587,7 +624,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g13-zp-das">
-                                <rect key="frame" x="166" y="394" width="42" height="30"/>
+                                <rect key="frame" x="166.5" y="394" width="42" height="30"/>
                                 <state key="normal" title="Entrar"/>
                                 <connections>
                                     <segue destination="u4B-nI-b3H" kind="show" id="9xM-iW-k9h"/>

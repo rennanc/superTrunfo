@@ -39,6 +39,8 @@ class RoomController : UIViewController{
     @IBOutlet weak var imageCard5: UIImageView!
     @IBOutlet weak var imageCard6: UIImageView!
     
+    var listImageCardsInHands = [UIImageView]() //lista de imagens de cartas na mao
+    
     
     //*** itens de tela do jogador ***
     @IBOutlet weak var labelNumberOfCards: UILabel!
@@ -58,7 +60,7 @@ class RoomController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSkillsTapGesture()
-        
+        setupCardsTapGesture()
         showCards()
         
     }
@@ -98,9 +100,26 @@ class RoomController : UIViewController{
         }
     }
     
+    //definindo gesto para adicionar acao as imagens para troca
+    func setupCardsTapGesture(){
+        listImageCardsInHands = [UIImageView](arrayLiteral: imageCard1,
+                                              imageCard2,
+                                              imageCard3,
+                                              imageCard4,
+                                              imageCard5,
+                                              imageCard6)
+        
+        for imageCardInHands in listImageCardsInHands{
+            let tapGesture =  UITapGestureRecognizer(target: self, action: #selector(self.selectCard))
+            tapGesture.isEnabled = true
+            imageCardInHands.addGestureRecognizer(tapGesture)
+        }
+    }
+    
+    //obtem todos as cartas do jogador
     func showCards(){
         //carregando as cartas pela primeira vez
-        var cards = cardService.getCards()
+        cards = cardService.getCards()
         
         if !cards.isEmpty {
             //exibe a primeira carta selecionada por padrao
@@ -119,6 +138,7 @@ class RoomController : UIViewController{
         
     }
     
+    //mostra a carta selecionada em evidencia
     func showCard(card : Card){
         labelHeroName.text = card.heroName
         imageHero.image = card.heroImage
@@ -126,6 +146,24 @@ class RoomController : UIViewController{
         labelSkillValue2.text = String(card.skillValue2)
         labelSkillValue3.text = String(card.skillValue3)
         labelSkillValue4.text = String(card.skillValue4)
+    }
+    
+    //acao de selecionar carta para trocar a carta na mao para colocar ela em evidencia
+    func selectCard(sender: UITapGestureRecognizer) {
+        //obtendo view
+        let selectedView : UIView = sender.view!
+        
+        //obtendo o card exibido
+        let cardShowed = cards[0]
+        
+        //obtem a carta selecionada
+        let selectedCard = cards[selectedView.tag]
+        //troca a carta exibida pela a selecionada na tela
+        showCard(card: selectedCard)
+        
+        //troca a ordem da carta mostrada pela carta selecionada no array
+        cards[0] = selectedCard
+        cards[selectedView.tag] = cardShowed
     }
     
     //escolher skill, será definido qual é pela tag
@@ -157,8 +195,11 @@ class RoomController : UIViewController{
         //Mostrar
         let alert = UIAlertController(title: "Confirmacao", message: "Você escolheu a habilidade de " + playerMove.nameSkill, preferredStyle: UIAlertControllerStyle.alert)
         
+        //adicionando opçoes no alerta
         alert.addAction(UIAlertAction(title: "Enviar", style: UIAlertActionStyle.default, handler: { action in self.sendToBattlePage(playerMove: playerMove) } ))
         alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.cancel, handler: nil ))
+        
+        //exibir alerta tela na tela atual
         self.present(alert, animated: true, completion: nil)
     }
     
