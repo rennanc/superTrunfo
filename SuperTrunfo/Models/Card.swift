@@ -10,11 +10,11 @@ import UIKit
 
 //atributos da carta
 struct Card{
-    let heroName: String!
-    let heroImage: UIImage!
-    let skillValue1: String!
-    let skillValue2: String!
-    let skillValue3: String!
-    let skillValue4: String!
-    let skillValue5: String!
+    var id: Int!
+    var heroName: String!
+    var heroImage: UIImage!
+    var skillValue1: Int!
+    var skillValue2: Int!
+    var skillValue3: Int!
+    var skillValue4: Int!
 }

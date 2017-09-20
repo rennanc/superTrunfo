@@ -7,6 +7,7 @@ target 'SuperTrunfo' do
 
   # Pods for SuperTrunfo
   pod 'Alamofire', '~> 4.5'
+  pod 'FirebaseUI', '~> 4.0'
 
   target 'SuperTrunfoTests' do
     inherit! :search_paths

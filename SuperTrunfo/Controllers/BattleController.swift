@@ -26,7 +26,7 @@ class BattleController : UIViewController{
     //***Variaveis do modelo***
     
     //atributos do desafiante
-    let challengerMove : PlayerMove! = nil
+    var challengerMove : PlayerMove! = nil
     
     //atributos do jogador deste proprio dispositivo
     var playerMove: PlayerMove! = nil

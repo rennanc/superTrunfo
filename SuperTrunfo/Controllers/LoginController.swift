@@ -12,4 +12,13 @@ class LoginController : UIViewController {
     
     @IBOutlet weak var txtLogin: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    
+    
+   // let loginButton = FBSDKLoginButton()
+    
+    override func viewDidLoad() {
+        //loginButton.delegate = self
+    }
+    
+    
 }
