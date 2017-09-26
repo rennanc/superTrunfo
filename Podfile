@@ -7,11 +7,14 @@ target 'SuperTrunfo' do
 
   # Pods for SuperTrunfo
   pod 'Alamofire', '~> 4.5'
-  pod 'FirebaseUI', '~> 4.0'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   target 'SuperTrunfoTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Firebase/Auth'
+    pod 'GoogleSignIn'
   end
 
   target 'SuperTrunfoUITests' do

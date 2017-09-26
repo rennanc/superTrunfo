@@ -122,6 +122,9 @@ class RoomController : UIViewController{
         cards = cardService.getCards()
         
         if !cards.isEmpty {
+            //define a primeira vez quantas cartas possui inicialmente
+            labelNumberOfCards.text = String(cardService.getCards().count - 1)
+            
             //exibe a primeira carta selecionada por padrao
             showCard(card: cards[0])
             

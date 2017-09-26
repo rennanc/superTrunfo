@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,6 +18,8 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     // nome da celula
     let cellRoomId = "RoomCustomCell"
+    
+    var playerName = ""
     
     override func viewDidLoad() {
         
@@ -76,6 +79,29 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         //entrando na sala escolhida
         navigationController?.pushViewController(controllerToSend, animated: true)
+    }
+    
+    
+    @IBAction func logout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            
+            //obtendo a instancia da controller do Login
+            let controllerToSend = storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginController
+            controllerToSend.navigationItem.hidesBackButton = true
+            //retornando para a tela de login
+            //performSegue(withIdentifier: "segueLogin", sender: self)
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            navigationController?.pushViewController(controllerToSend, animated: true)
+            
+            //self.presentingViewController!.dismiss(animated: true, completion: nil)
+            
+            //self.navigationController?.popToRootViewController(animated: true)
+            
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
     
 }

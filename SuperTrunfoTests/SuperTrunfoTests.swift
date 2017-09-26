@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Firebase
+import GoogleSignIn
 @testable import SuperTrunfo
 
 class SuperTrunfoTests: XCTestCase {

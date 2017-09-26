@@ -13,6 +13,8 @@
 		48AAF1121F6F0A510053FAAE /* PlayerMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAF1111F6F0A510053FAAE /* PlayerMove.swift */; };
 		48AAF1161F6F12F40053FAAE /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAF1151F6F12F40053FAAE /* LoginController.swift */; };
 		48AAF11A1F6F433E0053FAAE /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAF1191F6F433E0053FAAE /* CardService.swift */; };
+		48AAF1691F733C730053FAAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48AAF1681F733C730053FAAE /* GoogleService-Info.plist */; };
+		48AAF16D1F79EE3A0053FAAE /* MessageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAF16C1F79EE3A0053FAAE /* MessageUtil.swift */; };
 		48D663491F6B320900F695A2 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D663481F6B320900F695A2 /* RoomController.swift */; };
 		48D6634B1F6B40A300F695A2 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D6634A1F6B40A300F695A2 /* Room.swift */; };
 		48D6634D1F6B449000F695A2 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D6634C1F6B449000F695A2 /* Card.swift */; };
@@ -73,82 +75,12 @@
 			remoteGlobalIDString = 1A199DF4230C7617A72EB97DB43B25AE;
 			remoteInfo = GTMSessionFetcher;
 		};
-		48AAF13C1F708B830053FAAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0E920108747859A075934009AFDF0D41;
-			remoteInfo = Bolts;
-		};
-		48AAF13E1F708B830053FAAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F750400150DE3A60368844637457F890;
-			remoteInfo = FBSDKCoreKit;
-		};
-		48AAF1401F708B830053FAAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 247063CD1C107E62317E30169AC06346;
-			remoteInfo = FBSDKLoginKit;
-		};
-		48AAF1421F708B830053FAAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F2A4B23DE51405B685388136E7E17C81;
-			remoteInfo = "FirebaseUI-FirebaseAuthUI";
-		};
-		48AAF1441F708B830053FAAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BAB5DF321D8182B00579E1156B05642A;
-			remoteInfo = "FirebaseUI-FirebaseFacebookAuthUI";
-		};
-		48AAF1461F708B830053FAAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F2DD6CB017BD23B97123A48B2B285E10;
-			remoteInfo = "FirebaseUI-FirebaseGoogleAuthUI";
-		};
-		48AAF1481F708B830053FAAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 35580F4B05905302D75F2B97C77A8A9A;
-			remoteInfo = "FirebaseUI-FirebasePhoneAuthUI";
-		};
-		48AAF14A1F708B830053FAAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A8F79675318ECC48F7E9E073164F20BC;
-			remoteInfo = "FirebaseUI-FirebaseTwitterAuthUI";
-		};
-		48AAF14C1F708B830053FAAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 34DE37CB6C5735DCAB70F2F9ECAACAE2;
-			remoteInfo = "leveldb-library";
-		};
 		48AAF14E1F708B830053FAAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D0CAFDFBC1D56BE235549D0EDA822AF4;
 			remoteInfo = nanopb;
-		};
-		48AAF1501F708B830053FAAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A0EEDD9146B74722B60DC232FC8B235D;
-			remoteInfo = SDWebImage;
 		};
 		48D663461F6B31BC00F695A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -186,6 +118,8 @@
 		48AAF1111F6F0A510053FAAE /* PlayerMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerMove.swift; path = Models/PlayerMove.swift; sourceTree = "<group>"; };
 		48AAF1151F6F12F40053FAAE /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Controllers/LoginController.swift; sourceTree = "<group>"; };
 		48AAF1191F6F433E0053FAAE /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardService.swift; path = Stores/CardService.swift; sourceTree = "<group>"; };
+		48AAF1681F733C730053FAAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48AAF16C1F79EE3A0053FAAE /* MessageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageUtil.swift; path = Utils/MessageUtil.swift; sourceTree = "<group>"; };
 		48D663481F6B320900F695A2 /* RoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomController.swift; path = Controllers/RoomController.swift; sourceTree = "<group>"; };
 		48D6634A1F6B40A300F695A2 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = Models/Room.swift; sourceTree = "<group>"; };
 		48D6634C1F6B449000F695A2 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = Models/Card.swift; sourceTree = "<group>"; };
@@ -255,23 +189,13 @@
 			isa = PBXGroup;
 			children = (
 				48D663471F6B31BC00F695A2 /* Alamofire.framework */,
-				48AAF13D1F708B830053FAAE /* Bolts.framework */,
-				48AAF13F1F708B830053FAAE /* FBSDKCoreKit.framework */,
-				48AAF1411F708B830053FAAE /* FBSDKLoginKit.framework */,
-				48AAF1431F708B830053FAAE /* FirebaseAuthUI.bundle */,
-				48AAF1451F708B830053FAAE /* FirebaseFacebookAuthUI.bundle */,
-				48AAF1471F708B830053FAAE /* FirebaseGoogleAuthUI.bundle */,
-				48AAF1491F708B830053FAAE /* FirebasePhoneAuthUI.bundle */,
-				48AAF14B1F708B830053FAAE /* FirebaseTwitterAuthUI.bundle */,
 				48AAF1241F6F69320053FAAE /* GoogleToolboxForMac.framework */,
 				48AAF1261F6F69320053FAAE /* GTMOAuth2.framework */,
 				48AAF1281F6F69320053FAAE /* GTMSessionFetcher.framework */,
-				48AAF14D1F708B830053FAAE /* leveldb.framework */,
 				48AAF14F1F708B830053FAAE /* nanopb.framework */,
 				48500F971F56381E00DCDB74 /* Pods_SuperTrunfo.framework */,
 				48500F991F56381E00DCDB74 /* Pods_SuperTrunfoTests.framework */,
 				48500F9B1F56381E00DCDB74 /* Pods_SuperTrunfoUITests.framework */,
-				48AAF1511F708B830053FAAE /* SDWebImage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +214,14 @@
 				48500F9C1F5646A300DCDB74 /* RoomCustomCell.xib */,
 			);
 			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		48AAF16E1F79EE3F0053FAAE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				48AAF16C1F79EE3A0053FAAE /* MessageUtil.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		48EA11A41F54F243002FBB13 = {
@@ -317,13 +249,15 @@
 		48EA11AF1F54F243002FBB13 /* SuperTrunfo */ = {
 			isa = PBXGroup;
 			children = (
-				48EA11E41F54FF1A002FBB13 /* Controllers */,
-				48EA11E31F54F9B7002FBB13 /* Views */,
+				48AAF1681F733C730053FAAE /* GoogleService-Info.plist */,
 				48EA11E21F54F994002FBB13 /* Stores */,
 				48EA11E11F54F970002FBB13 /* Models */,
+				48AAF16E1F79EE3F0053FAAE /* Util */,
+				48EA11E41F54FF1A002FBB13 /* Controllers */,
+				48EA11E31F54F9B7002FBB13 /* Views */,
 				48EA11B01F54F243002FBB13 /* AppDelegate.swift */,
-				48EA11BA1F54F243002FBB13 /* Assets.xcassets */,
 				48EA11BF1F54F243002FBB13 /* Info.plist */,
+				48EA11BA1F54F243002FBB13 /* Assets.xcassets */,
 				48EA11B71F54F243002FBB13 /* SuperTrunfo.xcdatamodeld */,
 			);
 			path = SuperTrunfo;
@@ -559,81 +493,11 @@
 			remoteRef = 48AAF1271F6F69320053FAAE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		48AAF13D1F708B830053FAAE /* Bolts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Bolts.framework;
-			remoteRef = 48AAF13C1F708B830053FAAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		48AAF13F1F708B830053FAAE /* FBSDKCoreKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FBSDKCoreKit.framework;
-			remoteRef = 48AAF13E1F708B830053FAAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		48AAF1411F708B830053FAAE /* FBSDKLoginKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FBSDKLoginKit.framework;
-			remoteRef = 48AAF1401F708B830053FAAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		48AAF1431F708B830053FAAE /* FirebaseAuthUI.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FirebaseAuthUI.bundle;
-			remoteRef = 48AAF1421F708B830053FAAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		48AAF1451F708B830053FAAE /* FirebaseFacebookAuthUI.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FirebaseFacebookAuthUI.bundle;
-			remoteRef = 48AAF1441F708B830053FAAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		48AAF1471F708B830053FAAE /* FirebaseGoogleAuthUI.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FirebaseGoogleAuthUI.bundle;
-			remoteRef = 48AAF1461F708B830053FAAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		48AAF1491F708B830053FAAE /* FirebasePhoneAuthUI.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FirebasePhoneAuthUI.bundle;
-			remoteRef = 48AAF1481F708B830053FAAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		48AAF14B1F708B830053FAAE /* FirebaseTwitterAuthUI.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FirebaseTwitterAuthUI.bundle;
-			remoteRef = 48AAF14A1F708B830053FAAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		48AAF14D1F708B830053FAAE /* leveldb.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = leveldb.framework;
-			remoteRef = 48AAF14C1F708B830053FAAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		48AAF14F1F708B830053FAAE /* nanopb.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = nanopb.framework;
 			remoteRef = 48AAF14E1F708B830053FAAE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		48AAF1511F708B830053FAAE /* SDWebImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SDWebImage.framework;
-			remoteRef = 48AAF1501F708B830053FAAE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		48D663471F6B31BC00F695A2 /* Alamofire.framework */ = {
@@ -652,6 +516,7 @@
 			files = (
 				48EA11BE1F54F243002FBB13 /* LaunchScreen.storyboard in Resources */,
 				48EA11BB1F54F243002FBB13 /* Assets.xcassets in Resources */,
+				48AAF1691F733C730053FAAE /* GoogleService-Info.plist in Resources */,
 				48EA11B61F54F243002FBB13 /* Main.storyboard in Resources */,
 				48500F9D1F5646A300DCDB74 /* RoomCustomCell.xib in Resources */,
 			);
@@ -731,9 +596,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfoTests/Pods-SuperTrunfoTests-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -763,27 +631,17 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfo/Pods-SuperTrunfo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -797,9 +655,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfoTests/Pods-SuperTrunfoTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -831,14 +698,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfo/Pods-SuperTrunfo-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -868,6 +728,7 @@
 				48500FA11F56497300DCDB74 /* RoomUITableViewCell.swift in Sources */,
 				48D6634D1F6B449000F695A2 /* Card.swift in Sources */,
 				48AAF1071F6C12510053FAAE /* BattleController.swift in Sources */,
+				48AAF16D1F79EE3A0053FAAE /* MessageUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
