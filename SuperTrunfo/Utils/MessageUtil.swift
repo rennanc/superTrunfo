@@ -22,7 +22,7 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func showErrorMessage(title : String, message: String){
+    func showErrorMessage(title : String = "Erro", message: String){
         //Mostrar
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         

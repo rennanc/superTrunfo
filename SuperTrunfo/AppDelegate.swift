@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -24,8 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Usando biblioteca Firebase para Configurar a APIs
         FirebaseApp.configure()
         
+        //definindo configuracoes do login google
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        //definindo configuracoes do login facebook
+        FBSDKApplicationDelegate.sharedInstance().application(application,
+                                                              didFinishLaunchingWithOptions:launchOptions)
         
         return true
     }
@@ -108,20 +115,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url,
-                                                 sourceApplication: sourceApplication,
-                                                 annotation: annotation)
+        
+        //tela de login google
+        if GIDSignIn.sharedInstance().handle(url,sourceApplication: sourceApplication,annotation: annotation) {
+            return true
+        }
+        //facebook
+        return FBSDKApplicationDelegate.sharedInstance().application(application,
+                                                                     open: url,sourceApplication: sourceApplication,annotation: annotation)
     }
     
     
-    //***** Firebase
-    
-    
-    
+    //***** Firebase Google
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
+        
+        guard let controller = GIDSignIn.sharedInstance().uiDelegate as? LoginController else { return }
+        
         if let error = error {
-            print("\(error.localizedDescription)")
+            controller.showErrorMessage(title: "Erro ao logar", message: error.localizedDescription)
             return
         }
         
@@ -136,7 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        
+        /*
         let app = UIApplication.shared.delegate as! AppDelegate
         let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let initialViewController : LobbyController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Lobby") as! LobbyController
@@ -147,6 +158,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         app.window = UIWindow(frame: UIScreen.main.bounds)
         app.window?.rootViewController = nav
         app.window?.makeKeyAndVisible()
+         */
+        
+        controller.firebaseLogin(credential)
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
@@ -157,6 +171,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+    }
+    
+    
+    //facebook
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError?) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                // ...
+                return
+            }
+            // User is signed in
+            // ...
+        }
+        
     }
     
 

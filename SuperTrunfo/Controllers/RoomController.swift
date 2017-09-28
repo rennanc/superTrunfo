@@ -119,11 +119,21 @@ class RoomController : UIViewController{
     //obtem todos as cartas do jogador
     func showCards(){
         //carregando as cartas pela primeira vez
-        cards = cardService.getCards()
-        
+       // cards = cardService.getCards(completionHandler: nil)
+        cardService.getCards { responseObject, error in
+            self.buildPlayerDeck(cards: responseObject)
+            
+        }
+    }
+    
+    func buildPlayerDeck(cards : [Card]){
         if !cards.isEmpty {
+            
+            //gravando cartas na memoria
+            self.cards = cards
+            
             //define a primeira vez quantas cartas possui inicialmente
-            labelNumberOfCards.text = String(cardService.getCards().count - 1)
+            labelNumberOfCards.text = String(cards.count - 1)
             
             //exibe a primeira carta selecionada por padrao
             showCard(card: cards[0])
@@ -136,9 +146,8 @@ class RoomController : UIViewController{
             imageCard5.image = cards[6].heroImage
             imageCard6.image = cards[7].heroImage
         }else{
-            //TODO ALERT
+            showErrorMessage(message: "Ocorreu um erro ao obter as cartas, saia do jogo e tente novamente.")
         }
-        
     }
     
     //mostra a carta selecionada em evidencia

@@ -82,6 +82,41 @@
 			remoteGlobalIDString = D0CAFDFBC1D56BE235549D0EDA822AF4;
 			remoteInfo = nanopb;
 		};
+		48AAF17E1F7B4D420053FAAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FF65C89444C20A2CAA07815C9925E941;
+			remoteInfo = Bolts;
+		};
+		48AAF1801F7B4D420053FAAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0980AF4031ECCA360379946F0D4F21AD;
+			remoteInfo = FacebookCore;
+		};
+		48AAF1821F7B4D420053FAAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 333751F13278BEBFA6B1D4AD322EEC8F;
+			remoteInfo = FacebookLogin;
+		};
+		48AAF1841F7B4D420053FAAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC83E2DF93644AED2644A28034100017;
+			remoteInfo = FBSDKCoreKit;
+		};
+		48AAF1861F7B4D420053FAAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1AE13263EF034BC80E0516543BD8261F;
+			remoteInfo = FBSDKLoginKit;
+		};
 		48D663461F6B31BC00F695A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
@@ -189,6 +224,11 @@
 			isa = PBXGroup;
 			children = (
 				48D663471F6B31BC00F695A2 /* Alamofire.framework */,
+				48AAF17F1F7B4D420053FAAE /* Bolts.framework */,
+				48AAF1811F7B4D420053FAAE /* FacebookCore.framework */,
+				48AAF1831F7B4D420053FAAE /* FacebookLogin.framework */,
+				48AAF1851F7B4D420053FAAE /* FBSDKCoreKit.framework */,
+				48AAF1871F7B4D420053FAAE /* FBSDKLoginKit.framework */,
 				48AAF1241F6F69320053FAAE /* GoogleToolboxForMac.framework */,
 				48AAF1261F6F69320053FAAE /* GTMOAuth2.framework */,
 				48AAF1281F6F69320053FAAE /* GTMSessionFetcher.framework */,
@@ -500,6 +540,41 @@
 			remoteRef = 48AAF14E1F708B830053FAAE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		48AAF17F1F7B4D420053FAAE /* Bolts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Bolts.framework;
+			remoteRef = 48AAF17E1F7B4D420053FAAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		48AAF1811F7B4D420053FAAE /* FacebookCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FacebookCore.framework;
+			remoteRef = 48AAF1801F7B4D420053FAAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		48AAF1831F7B4D420053FAAE /* FacebookLogin.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FacebookLogin.framework;
+			remoteRef = 48AAF1821F7B4D420053FAAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		48AAF1851F7B4D420053FAAE /* FBSDKCoreKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FBSDKCoreKit.framework;
+			remoteRef = 48AAF1841F7B4D420053FAAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		48AAF1871F7B4D420053FAAE /* FBSDKLoginKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FBSDKLoginKit.framework;
+			remoteRef = 48AAF1861F7B4D420053FAAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		48D663471F6B31BC00F695A2 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -631,17 +706,31 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SuperTrunfo/Pods-SuperTrunfo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

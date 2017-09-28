@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import ObjectMapper
 
 //atributos da carta
-struct Card{
+struct Card : Mappable{
     var id: Int!
     var heroName: String!
     var heroImage: UIImage!
@@ -17,4 +18,27 @@ struct Card{
     var skillValue2: Int!
     var skillValue3: Int!
     var skillValue4: Int!
+    
+    var category: String!
+    var rank: Int!
+    
+    init(){
+        
+    }
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        //id 	<- map["id"]
+        heroName    <- map["name"]
+        rank        <- map["rank"]
+        category 	<- map["category"]
+        skillValue1 	<- map["intelligence"]
+        skillValue2 	<- map["skill"]
+        skillValue3 	<- map["speed"]
+        skillValue4 	<- map["strength"]
+        
+    }
 }

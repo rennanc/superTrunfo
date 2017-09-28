@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginController : UIViewController, GIDSignInUIDelegate {
     
@@ -16,14 +18,16 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var txtPassword: UITextField!
     
     @IBOutlet weak var signInButton: GIDSignInButton!
-    
+    @IBOutlet weak var signInButtonFB: FBSDKLoginButton!
     
    // let loginButton = FBSDKLoginButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance().uiDelegate = self
         
-        //GIDSignIn.sharedInstance().uiDelegate = self
+
+        
         //GIDSignIn.sharedInstance().signIn()
         
         // TODO(developer) Configure the sign-in button look/feel
@@ -62,55 +66,45 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
         }
     }
     
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
-        if let error = error {
-            // ...
-            return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        
-        
-        
-        // ...
-        Auth.auth().signIn(with: credential) { (user, error) in
-            if let error = error {
-                // ...
-                return
-            }
-            // User is signed in
-            let firebaseAuth = Auth.auth()
-            do {
-                try firebaseAuth.signOut()
-            } catch let signOutError as NSError {
-                print ("Error signing out: %@", signOutError)
-            }
-        }
-    }
-    @IBAction func signIn(_ sender: GIDSignInButton) {
-        
-        GIDSignIn.sharedInstance().signIn()
-    }
-    
-    /*
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        /*if segue.identifier == "segueLobby"{
-            if let navigationViewController = segue.destination as? UINavigationController, let myViewController = navigationVC.topViewController as? MyViewControllerClass {
-                myViewController.yourProperty = myProperty
-            }
-        }*/
-    }*/
-    
-    
     //envia para a pagina de lobby com as salas
     func sendToLobby(){
         performSegue(withIdentifier: "segueLobby", sender: self)
-        //let destinationNavigationController = segue.destination as! UINavigationController
-        //let targetController = destinationNavigationController.topViewController
+    }
+    
+    func firebaseLogin(_ credential: AuthCredential) {
+        if let user = Auth.auth().currentUser {
+            user.link(with: credential) { (user, error) in
+                if let error = error {
+                    self.showErrorMessage(message: error.localizedDescription)
+                    return
+                }
+                self.sendToLobby()
+            }
+        } else {
+            //logando com credencial
+            Auth.auth().signIn(with: credential) { (user, error) in
+                if let error = error {
+                    self.showErrorMessage(message: error.localizedDescription)
+                    return
+                }
+                self.sendToLobby()
+            }
+        }
+    }
+    
+    
+    @IBAction func signInFacebook(_ sender: Any){
+        let loginManager = FBSDKLoginManager()
+        loginManager.logIn(withReadPermissions: ["email"], from: self, handler: { (result, error) in
+            if let error = error {
+                self.showErrorMessage(message: error.localizedDescription)
+            } else if result!.isCancelled {
+                print("FBLogin cancelled")
+            } else {
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                self.firebaseLogin(credential)
+            }
+        })
     }
     
     

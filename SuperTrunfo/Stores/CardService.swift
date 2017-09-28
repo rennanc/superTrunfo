@@ -1,4 +1,4 @@
-//
+ //
 //  CardsApi.swift
 //  SuperTrunfo
 //
@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireObjectMapper
 
 class CardService {
     
@@ -15,21 +16,43 @@ class CardService {
     /*
     * Servicos para obter cartas para o jogador
     */
-    func getCards() -> [Card]!{
-        Alamofire.request("https://infnet-ios-api.herokuapp.com/sortDeck").responseJSON { response in
+    func getCards(completionHandler: @escaping ([Card], NSError?) -> ()) -> [Card]!{
+        
+        var cards = [Card]()
+        
+        Alamofire.request("https://infnet-ios-api.herokuapp.com/sortDeck").responseArray { (response: DataResponse<[Card]>) in
+            //responseJSON { response in
+            /*
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
+            */
             
+            switch response.result {
+            case .success(let value):
+                completionHandler(value, nil)
+            case .failure(let error):
+                completionHandler([Card](), error as NSError)
+            }
+            
+            /*
             if let json = response.result.value {
                 print("JSON: \(json)") // serialized json response
+            }
+            
+            if let cardsArray = response.result.value {
+                _completion?(cards)
+                cards = cardsArray
+            } else {
+                //Handle error
             }
             
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)") // original server data as UTF8 string
             }
+            */
         }
-        
+        /* mock
         var cards : [Card] = [Card]()
         
         for i in 0...7 {
@@ -43,7 +66,7 @@ class CardService {
             card.skillValue4 = Int(arc4random_uniform(10))
             
             cards.append(card)
-        }
+        }*/
         return cards
     }
     

@@ -9,6 +9,10 @@ target 'SuperTrunfo' do
   pod 'Alamofire', '~> 4.5'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'ObjectMapper', '~> 2.2'
+  pod 'AlamofireObjectMapper', '~> 4.0'
 
   target 'SuperTrunfoTests' do
     inherit! :search_paths
