@@ -11,5 +11,5 @@ import UIKit
 struct PlayerMove {
     var image: UIImage!
     var nameSkill: String!
-    var valueSkill: String!
+    var valueSkill: Int!
 }

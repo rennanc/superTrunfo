@@ -24,6 +24,13 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //adicionando fundo na view
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image =  UIImage(named: "loginMarvel")
+        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
         GIDSignIn.sharedInstance().uiDelegate = self
         
 

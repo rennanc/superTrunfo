@@ -9,6 +9,10 @@
 
 import UIKit
 import Firebase
+import RxCocoa
+import RxSwift
+import ObjectMapper
+import CoreLocation
 
 class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,27 +20,77 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     @IBOutlet weak var tableRooms: UITableView!
     
+    //*** servicos ***
+    var cardService : CardService = CardService()
+    
+    let disposeBag = DisposeBag()
+    var locManager = CLLocationManager()
+    var currentLocation: CLLocation!
+    
     // nome da celula
     let cellRoomId = "RoomCustomCell"
     
     var playerName = ""
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
+        //solicitando permissao para acesso ao gps
+        locManager.requestWhenInUseAuthorization()
+        
+        //delegando essa view para controlar a tabela
         tableRooms.delegate = self
         
-        //adicionando dados mockados na celula
-        arrayOfRooms = [
-            Room(id: 1, name: "sala 1", challenger: "Joao Almeida", distance: 100,  image: #imageLiteral(resourceName: "room-full")),
-            Room(id: 2, name: "sala 2", challenger: "Alberto Martins", distance: 200, image: #imageLiteral(resourceName: "room-empty")),
-            Room(id: 3, name: "sala 3", challenger: "Larissa Albuquerque", distance: 300, image: #imageLiteral(resourceName: "room-full")),
-        ]
-        super.viewDidLoad()
+        //Remember about [weak self]/[unowned self] to prevent retain cycles!
+        cardService.getRooms()
+            .subscribe(onNext: { [weak self] (element) in
+                var response = element
+                self?.arrayOfRooms = [Room](JSONString: response)!
+                self?.tableRooms.reloadData()
+            }).addDisposableTo(disposeBag)
+        //arrayOfRooms =
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    //obtem localizacao do usuario
+    func getDistanceOfPlayers(challengerLatitude : Double, challengerLongitude : Double) -> Double!{
+        
+        if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
+            currentLocation = locManager.location
+            
+            //obtendo distancia do desafiante de acordo com a localizacao do jogador
+            let coordinateChallenger = CLLocation(latitude: challengerLatitude, longitude: challengerLongitude)
+            let coordinatePlayer = CLLocation(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+            return coordinateChallenger.distance(from: coordinatePlayer) // resultado em metros
+        }
+        return nil
+    }
+    
+    
+    @IBAction func logout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            
+            //obtendo a instancia da controller do Login
+            let controllerToSend = storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginController
+            controllerToSend.navigationItem.hidesBackButton = true
+            //retornando para a tela de login
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            navigationController?.pushViewController(controllerToSend, animated: true)
+            
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
+    
+    //********** Controle da tabela  *********
     
     
     //obtem numero de linhas na table view
@@ -50,13 +104,25 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         //obtendo celula customizada
         let cell = Bundle.main.loadNibNamed(cellRoomId, owner: self, options: nil)?.first as! RoomUITableViewCell
         
-        let room = arrayOfRooms[indexPath.row]
+        var room = arrayOfRooms[indexPath.row]
         
         //definindo dados da celula
         cell.imageStatus.image = room.image
         cell.nameRoom.text = room.name
         cell.nameChallenger.text = room.challenger
-        cell.distance.text =  "" + String(room.distance) + "m de distancia"
+        
+        if (!room.available){
+            cell.contentView.backgroundColor = UIColor(red: 102/256, green: 255/256, blue: 255/256, alpha: 0.66)
+        }else{
+            
+        }
+        
+        
+        room.distance = getDistanceOfPlayers(challengerLatitude: room.latitude, challengerLongitude: room.longitude)
+        
+        if(room.distance != nil){
+            cell.distance.text =  "" + String(room.distance) + " m de distancia"
+        }
         
         return cell
     }
@@ -80,30 +146,5 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         //entrando na sala escolhida
         navigationController?.pushViewController(controllerToSend, animated: true)
     }
-    
-    
-    @IBAction func logout(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            
-            //obtendo a instancia da controller do Login
-            let controllerToSend = storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginController
-            controllerToSend.navigationItem.hidesBackButton = true
-            //retornando para a tela de login
-            //performSegue(withIdentifier: "segueLogin", sender: self)
-            navigationController?.setNavigationBarHidden(true, animated: true)
-            navigationController?.pushViewController(controllerToSend, animated: true)
-            
-            //self.presentingViewController!.dismiss(animated: true, completion: nil)
-            
-            //self.navigationController?.popToRootViewController(animated: true)
-            
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-    }
-    
-    
     
 }

@@ -13,12 +13,16 @@ target 'SuperTrunfo' do
   pod 'FacebookLogin'
   pod 'ObjectMapper', '~> 2.2'
   pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'RxSwift',    '~> 3.0'
+  pod 'RxCocoa',    '~> 3.0'
 
   target 'SuperTrunfoTests' do
     inherit! :search_paths
     # Pods for testing
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
+    pod 'RxBlocking', '~> 3.0'
+    pod 'RxTest',     '~> 3.0'
   end
 
   target 'SuperTrunfoUITests' do

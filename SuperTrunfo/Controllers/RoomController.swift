@@ -10,6 +10,8 @@ import UIKit
 
 class RoomController : UIViewController{
     
+    @IBOutlet weak var cardView: UIView!
+    
     //*** itens de tela da carta ***
     @IBOutlet weak var labelHeroName: UILabel!
     @IBOutlet weak var imageHero: UIImageView!
@@ -56,17 +58,40 @@ class RoomController : UIViewController{
     //*** modelos ***
     var playerMove : PlayerMove!
     var cards : [Card] = [Card]()
+    var cardsPlayer : [Card] = [Card]()
+    var cardsChallenger : [Card] = [Card]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        beaultifulLayout()
+        
         setupSkillsTapGesture()
         setupCardsTapGesture()
         showCards()
+        
+        startGame()
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //adiciona itens para embelezar o leyout
+    func beaultifulLayout(){
+        //adicionando fundo na view
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image =  UIImage(named: "backgroundMarvel")
+        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
+        let cardImage = UIImageView(frame: self.cardView.bounds)
+        cardImage.image =  UIImage(named: "cardMarvel")
+        //cardImage.wid
+        //cardImage.contentMode = UIViewContentMode.s
+        self.cardView.insertSubview(cardImage, at: 0)
+        self.cardView.layer.cornerRadius = 10.0
+        self.cardView.layer.borderWidth = 0.5
     }
     
     /*
@@ -125,6 +150,7 @@ class RoomController : UIViewController{
             
         }
     }
+    
     
     func buildPlayerDeck(cards : [Card]){
         if !cards.isEmpty {
@@ -192,7 +218,7 @@ class RoomController : UIViewController{
         playerMove.image = imageHero.image
         
         //salvando o valor do item selecionado
-        playerMove.valueSkill = selectedLabel.text
+        playerMove.valueSkill = Int(selectedLabel.text!)
         
         //obtendo o nome do item selecionado
         if let i = listOfSkillsName.index(where: { $0.tag == selectedLabel.tag}){
@@ -202,22 +228,12 @@ class RoomController : UIViewController{
         showMessageBeforeMove(playerMove: playerMove)
     }
     
-    //exibe confirmacao antes de enviar o movimento
-    func showMessageBeforeMove(playerMove : PlayerMove){
-        //Mostrar
-        let alert = UIAlertController(title: "Confirmacao", message: "Você escolheu a habilidade de " + playerMove.nameSkill, preferredStyle: UIAlertControllerStyle.alert)
-        
-        //adicionando opçoes no alerta
-        alert.addAction(UIAlertAction(title: "Enviar", style: UIAlertActionStyle.default, handler: { action in self.sendToBattlePage(playerMove: playerMove) } ))
-        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.cancel, handler: nil ))
-        
-        //exibir alerta tela na tela atual
-        self.present(alert, animated: true, completion: nil)
-    }
+    
     
     //Envia a habilidade selecionada para a tela de batalha para obter o resultado da disputa
     func sendToBattlePage(playerMove : PlayerMove){
         
+        //obtendo resultado da jogada
         let challengerMove = cardService.getChallengerMove();
         
         //obtendo a instancia da controller
@@ -231,6 +247,31 @@ class RoomController : UIViewController{
         navigationController?.pushViewController(controllerToSend, animated: true)
     }
     
+    /*verifica se o jogador é o desafiante ou nao
+    * e mostra as instrucoes para seguir
+    */
+    func startGame(){
+        let challenge = cardService.getChalenge()
+        if(challenge){
+            self.showInfoMessage(message: "Você é o desafiante, a partida começa por você.\n Escolha uma carta entre as 7 e entao, escolha a melhor Habilidade clicando sobre elas.")
+        }else{
+            self.showInfoMessage(message: "Você foi desafiado, aguarde o seu desafiante escolher uma carta")
+        }
+    }
+    
+    
+    //exibe confirmacao antes de enviar o movimento
+    func showMessageBeforeMove(playerMove : PlayerMove){
+        //Mostrar
+        let alert = UIAlertController(title: "Confirmacao", message: "Você escolheu a habilidade de " + playerMove.nameSkill, preferredStyle: UIAlertControllerStyle.alert)
+        
+        //adicionando opçoes no alerta
+        alert.addAction(UIAlertAction(title: "Enviar", style: UIAlertActionStyle.default, handler: { action in self.sendToBattlePage(playerMove: playerMove) } ))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.cancel, handler: nil ))
+        
+        //exibir alerta tela na tela atual
+        self.present(alert, animated: true, completion: nil)
+    }
     
     
 }

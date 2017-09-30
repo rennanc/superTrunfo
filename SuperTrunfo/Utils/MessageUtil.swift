@@ -33,4 +33,16 @@ extension UIViewController {
         //exibir alerta tela na tela atual
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func showInfoMessage(title : String = "Info", message: String){
+        //Mostrar
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil ))
+        
+        alert.view.backgroundColor = UIColor.blue
+        
+        //exibir alerta tela na tela atual
+        self.present(alert, animated: true, completion: nil)
+    }
 }

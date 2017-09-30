@@ -372,7 +372,7 @@
                                     <constraint firstItem="953-XL-3I3" firstAttribute="centerX" secondItem="BvN-ax-5Ey" secondAttribute="centerX" id="Z45-9h-6Wj"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVG-2Q-btP" userLabel="ViewPlayer">
+                            <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVG-2Q-btP" userLabel="ViewPlayer">
                                 <rect key="frame" x="0.0" y="676" width="414" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minhas Cartas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPo-W5-AyU">
@@ -396,28 +396,28 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o10-mi-ecz">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o10-mi-ecz">
                                         <rect key="frame" x="158" y="6" width="35" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGf-p6-XDn">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGf-p6-XDn">
                                         <rect key="frame" x="158" y="33" width="35" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rE0-qS-id6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rE0-qS-id6">
                                         <rect key="frame" x="286" y="33" width="35" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ty-Ez-CeW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ty-Ez-CeW">
                                         <rect key="frame" x="286" y="6" width="35" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -432,7 +432,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0004125674603306928" green="0.45598507584753201" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.27348586409999998" blue="0.23079774489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.29610944792008054" green="0.52265718884454371" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="yh8-lp-RsR"/>
@@ -456,7 +456,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Escolha uma Habilidade" prompt="Sala de Jogo #1" id="ma8-D2-phU">
-                        <barButtonItem key="backBarButtonItem" title="Sair" id="I7D-r9-DwB"/>
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="I7D-r9-DwB"/>
                         <barButtonItem key="leftBarButtonItem" title="Sair" id="moq-wZ-LJ6">
                             <connections>
                                 <segue destination="u4B-nI-b3H" kind="show" id="KUt-Bf-Pqr"/>
@@ -465,6 +465,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="cardView" destination="GsY-wd-Ulw" id="KvA-Su-IE5"/>
                         <outlet property="imageCard1" destination="o49-HO-4tW" id="Hag-W9-8Tl"/>
                         <outlet property="imageCard2" destination="PYj-Lg-aJ7" id="Sqa-iR-3E0"/>
                         <outlet property="imageCard3" destination="bGh-Uc-tX3" id="fvY-C3-7oc"/>
@@ -619,6 +620,8 @@
                         <outlet property="labelChallengerValueSkill" destination="Lta-VI-WMO" id="jHx-ib-h70"/>
                         <outlet property="labelPlayerNameSkill" destination="oQp-b1-F2t" id="0tM-jZ-w3q"/>
                         <outlet property="labelPlayerValueSkill" destination="w4M-7F-KPW" id="ffz-mT-evL"/>
+                        <outlet property="viewCardChallenger" destination="AIV-Zb-E2Q" id="LbK-sJ-INa"/>
+                        <outlet property="viewCardPlayer" destination="luF-i6-8Qn" id="jSa-dp-F0F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bR-1y-kgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -788,6 +791,6 @@
         <image name="add" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vxj-e5-Avl"/>
+        <segue reference="KUt-Bf-Pqr"/>
     </inferredMetricsTieBreakers>
 </document>

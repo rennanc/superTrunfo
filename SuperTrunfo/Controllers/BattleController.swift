@@ -13,11 +13,13 @@ class BattleController : UIViewController{
     //***Variaveis de tela***
     
     //atributos do desafiante
+    @IBOutlet weak var viewCardChallenger: UIView!
     @IBOutlet weak var imageChallenger: UIImageView!
     @IBOutlet weak var labelChallengerNameSkill: UILabel!
     @IBOutlet weak var labelChallengerValueSkill: UILabel!
     
     //atributos do jogador
+    @IBOutlet weak var viewCardPlayer: UIView!
     @IBOutlet weak var imagePlayer: UIImageView!
     @IBOutlet weak var labelPlayerNameSkill: UILabel!
     @IBOutlet weak var labelPlayerValueSkill: UILabel!
@@ -34,18 +36,43 @@ class BattleController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        beaultifulLayout()
         
         if playerMove != nil {
             imagePlayer.image = playerMove.image
             labelPlayerNameSkill.text = playerMove.nameSkill
             labelChallengerNameSkill.text = playerMove.nameSkill
-            labelPlayerValueSkill.text = playerMove.valueSkill
+            labelPlayerValueSkill.text = String(playerMove.valueSkill)
+            
+            if(playerMove.valueSkill > challengerMove.valueSkill){
+                self.showInfoMessage(title: "Ganhou!!!",message: "Você ganhou essa jogada")
+            }else{
+                self.showInfoMessage(title: "Perdeu!!!",message: "Você perdeu essa jogada")
+            }
         }
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //adiciona itens para embelezar o layout
+    func beaultifulLayout(){
+        //adicionando fundo na view
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image =  UIImage(named: "backgroundMarvel")
+        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
+        let cardImage = UIImageView(frame: self.viewCardChallenger.bounds)
+        cardImage.image =  UIImage(named: "cardMarvel")
+        self.viewCardChallenger.insertSubview(cardImage, at: 0)
+        self.viewCardChallenger.layer.cornerRadius = 10.0
+        self.viewCardChallenger.layer.borderWidth = 0.5
+        self.viewCardPlayer.insertSubview(cardImage, at: 0)
+        self.viewCardPlayer.layer.cornerRadius = 10.0
+        self.viewCardPlayer.layer.borderWidth = 0.5
     }
     
 }
