@@ -7,9 +7,27 @@
 //
 
 import UIKit
+import ObjectMapper
 
-struct PlayerMove {
-    var image: UIImage!
+struct PlayerMove  : Mappable{
+    var cardId : String!
+    var player : Player!
     var nameSkill: String!
     var valueSkill: Int!
+    var image: UIImage!
+    
+    init(){
+        
+    }
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        cardId       <- map["cardId"]
+        player       <- map["player"]
+        nameSkill    <- map["nameSkill"]
+        valueSkill   <- map["valueSkill"]
+    }
 }

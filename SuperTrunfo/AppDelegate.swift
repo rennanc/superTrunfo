@@ -140,16 +140,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         /*
         let userId = user.userID                  // For client-side use only!
         let idToken = user.authentication.idToken // Safe to send to the server
+        let email = user.profile.email*/
         let fullName = user.profile.name
         let givenName = user.profile.givenName
         let familyName = user.profile.familyName
-        let email = user.profile.email
- */
         
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        /*
+        
         let app = UIApplication.shared.delegate as! AppDelegate
         let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let initialViewController : LobbyController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Lobby") as! LobbyController
@@ -160,7 +159,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         app.window = UIWindow(frame: UIScreen.main.bounds)
         app.window?.rootViewController = nav
         app.window?.makeKeyAndVisible()
-         */
+        
         
         controller.firebaseLogin(credential)
     }
@@ -186,7 +185,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         
         Auth.auth().signIn(with: credential) { (user, error) in
-            if let error = error {
+            if error != nil {
                 // ...
                 return
             }

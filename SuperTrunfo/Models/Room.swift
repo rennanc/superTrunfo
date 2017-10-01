@@ -19,6 +19,9 @@ struct Room : Mappable{
     var available : Bool!
     var latitude : Double!
     var longitude : Double!
+    
+    var games : [Game]!
+    var players : [Player]!
         
     init(){
         

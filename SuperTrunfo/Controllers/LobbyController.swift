@@ -123,16 +123,16 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         var room = arrayOfRooms[indexPath.row]
         
         //definindo dados da celula
-        cell.imageStatus.image = room.image
-        cell.nameRoom.text = room.name
-        cell.nameChallenger.text = room.creator
         
-        if (!room.available){
-            cell.contentView.backgroundColor = UIColor(red: 102/256, green: 255/256, blue: 255/256, alpha: 0.66)
+        if(room.available){
+            cell.imageStatus.image = UIImage(named: "room-empty")
         }else{
-            
+            cell.imageStatus.image = UIImage(named: "room-full")
+
         }
         
+        //cell.nameRoom.text = room.name
+        cell.nameChallenger.text = room.creator
         
         room.distance = getDistanceOfPlayers(challengerLatitude: room.latitude, challengerLongitude: room.longitude)
         
@@ -145,7 +145,7 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     //obtem altura de cada celula
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 75
     }
     
     

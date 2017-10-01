@@ -56,6 +56,7 @@ class RoomController : UIViewController{
     var cardService : CardService = CardService()
     
     //*** modelos ***
+    var playerPanel : Panel! = Panel()
     var playerMove : PlayerMove!
     var cards : [Card] = [Card]()
     var cardsPlayer : [Card] = [Card]()
@@ -157,7 +158,8 @@ class RoomController : UIViewController{
             self.cards = cards
             
             //define a primeira vez quantas cartas possui inicialmente
-            labelNumberOfCards.text = String(cards.count - 1)
+            playerPanel.numberOfCards = cards.count - 1
+            refreshPlayerPanel()
             
             //exibe a primeira carta selecionada por padrao
             showCard(card: cards[0])
@@ -250,6 +252,15 @@ class RoomController : UIViewController{
         //obtendo a instancia da controller
         let controllerToSend = storyboard?.instantiateViewController(withIdentifier: "Battle") as! BattleController
         
+        
+        //TODO criacao de nova partida
+        //cardService.createGame()
+        var game : Game = Game()
+        game.playerMoves.append(playerMove)
+        game.playerMoves.append(challengerMove)
+        controllerToSend.game = game
+        
+        
         //transferindo objeto para a nova pagina
         controllerToSend.playerMove = playerMove
         controllerToSend.challengerMove = challengerMove
@@ -270,8 +281,46 @@ class RoomController : UIViewController{
         }
     }
     
-    func receiveResult(result : Int){
-        self.showInfoMessage(message: "retorno" + String(result))
+    /*Funcao para receber resultado da jogada enviada pela tela de 
+     *batalha
+     */
+    func receiveResult(battleStatus : BattleStatus, resultGame: Game){
+        
+        if(battleStatus == BattleStatus.win){
+            playerPanel.numberWinners = playerPanel.numberWinners + 1
+            playerPanel.numberOfCards = playerPanel.numberOfCards + 1
+        }else if(battleStatus == BattleStatus.defeat){
+            playerPanel.numberDefeats = playerPanel.numberDefeats + 1
+            playerPanel.numberOfCards = playerPanel.numberOfCards - 1
+        }else{ //empate
+            playerPanel.numberOfCards = playerPanel.numberOfCards - 1
+        }
+        
+        refreshPlayerPanel()
+        //TODO
+        //cardService.gravarResultado()
+        //self.showInfoMessage(message: "retorno" + String(describing: battleStatus))
+        checkFinalResult()
+    }
+    
+    func changeOrderOfDeck(){
+        //var firstCard
+    }
+    
+    func refreshPlayerPanel(){
+        labelNumWinner.text = String(playerPanel.numberWinners)
+        labelNumDefeat.text = String(playerPanel.numberDefeats)
+        labelNumberOfCards.text =  String(playerPanel.numberOfCards)
+        labelNumCardsInDeck.text = String(playerPanel.numberCardInDeck)
+    }
+    
+    //verifica se a partida chegou ao fim
+    func checkFinalResult(){
+        if(playerPanel.numberOfCards == 0){
+            showInfoMessage(message: "Fim de Partida, você perdeu")
+        }else if(playerPanel.numberOfCards == 32){
+            showInfoMessage(message: "Fim de Partida, você ganhou")
+        }
     }
     
     

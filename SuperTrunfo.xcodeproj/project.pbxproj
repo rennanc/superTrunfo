@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		48500F9D1F5646A300DCDB74 /* RoomCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48500F9C1F5646A300DCDB74 /* RoomCustomCell.xib */; };
 		48500FA11F56497300DCDB74 /* RoomUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48500FA01F56497300DCDB74 /* RoomUITableViewCell.swift */; };
+		488CE16E1F816F4000FCE4FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CE16D1F816F4000FCE4FF /* Game.swift */; };
+		488CE1701F816FD500FCE4FF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CE16F1F816FD500FCE4FF /* Player.swift */; };
+		488CE1751F818A6900FCE4FF /* BattleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CE1741F818A6900FCE4FF /* BattleStatus.swift */; };
 		48AAF1071F6C12510053FAAE /* BattleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAF1061F6C12510053FAAE /* BattleController.swift */; };
 		48AAF1121F6F0A510053FAAE /* PlayerMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAF1111F6F0A510053FAAE /* PlayerMove.swift */; };
 		48AAF1161F6F12F40053FAAE /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAF1151F6F12F40053FAAE /* LoginController.swift */; };
@@ -18,7 +21,7 @@
 		48D663491F6B320900F695A2 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D663481F6B320900F695A2 /* RoomController.swift */; };
 		48D6634B1F6B40A300F695A2 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D6634A1F6B40A300F695A2 /* Room.swift */; };
 		48D6634D1F6B449000F695A2 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D6634C1F6B449000F695A2 /* Card.swift */; };
-		48D6634F1F6B45E900F695A2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D6634E1F6B45E900F695A2 /* Game.swift */; };
+		48D6634F1F6B45E900F695A2 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D6634E1F6B45E900F695A2 /* Panel.swift */; };
 		48EA11B11F54F243002FBB13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11B01F54F243002FBB13 /* AppDelegate.swift */; };
 		48EA11B61F54F243002FBB13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA11B41F54F243002FBB13 /* Main.storyboard */; };
 		48EA11B91F54F243002FBB13 /* SuperTrunfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48EA11B71F54F243002FBB13 /* SuperTrunfo.xcdatamodeld */; };
@@ -198,6 +201,9 @@
 		48500F901F56381E00DCDB74 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		48500F9C1F5646A300DCDB74 /* RoomCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomCustomCell.xib; path = Views/RoomCustomCell.xib; sourceTree = "<group>"; };
 		48500FA01F56497300DCDB74 /* RoomUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomUITableViewCell.swift; path = Controllers/RoomUITableViewCell.swift; sourceTree = "<group>"; };
+		488CE16D1F816F4000FCE4FF /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Models/Game.swift; sourceTree = "<group>"; };
+		488CE16F1F816FD500FCE4FF /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Models/Player.swift; sourceTree = "<group>"; };
+		488CE1741F818A6900FCE4FF /* BattleStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BattleStatus.swift; path = Models/Enums/BattleStatus.swift; sourceTree = "<group>"; };
 		48AAF1061F6C12510053FAAE /* BattleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BattleController.swift; path = Controllers/BattleController.swift; sourceTree = "<group>"; };
 		48AAF1111F6F0A510053FAAE /* PlayerMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerMove.swift; path = Models/PlayerMove.swift; sourceTree = "<group>"; };
 		48AAF1151F6F12F40053FAAE /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Controllers/LoginController.swift; sourceTree = "<group>"; };
@@ -207,7 +213,7 @@
 		48D663481F6B320900F695A2 /* RoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomController.swift; path = Controllers/RoomController.swift; sourceTree = "<group>"; };
 		48D6634A1F6B40A300F695A2 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = Models/Room.swift; sourceTree = "<group>"; };
 		48D6634C1F6B449000F695A2 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = Models/Card.swift; sourceTree = "<group>"; };
-		48D6634E1F6B45E900F695A2 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Models/Game.swift; sourceTree = "<group>"; };
+		48D6634E1F6B45E900F695A2 /* Panel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Panel.swift; path = Models/Panel.swift; sourceTree = "<group>"; };
 		48EA11AD1F54F243002FBB13 /* SuperTrunfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperTrunfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA11B01F54F243002FBB13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48EA11B51F54F243002FBB13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -312,6 +318,14 @@
 			name = CustomCells;
 			sourceTree = "<group>";
 		};
+		488CE1711F818A0000FCE4FF /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				488CE1741F818A6900FCE4FF /* BattleStatus.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
 		48AAF16E1F79EE3F0053FAAE /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,10 +394,13 @@
 		48EA11E11F54F970002FBB13 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				488CE1711F818A0000FCE4FF /* Enums */,
+				488CE16F1F816FD500FCE4FF /* Player.swift */,
+				488CE16D1F816F4000FCE4FF /* Game.swift */,
 				48AAF1111F6F0A510053FAAE /* PlayerMove.swift */,
 				48D6634A1F6B40A300F695A2 /* Room.swift */,
 				48D6634C1F6B449000F695A2 /* Card.swift */,
-				48D6634E1F6B45E900F695A2 /* Game.swift */,
+				48D6634E1F6B45E900F695A2 /* Panel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -923,8 +940,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				48AAF1161F6F12F40053FAAE /* LoginController.swift in Sources */,
+				488CE16E1F816F4000FCE4FF /* Game.swift in Sources */,
 				48EA11E61F54FF61002FBB13 /* LobbyController.swift in Sources */,
-				48D6634F1F6B45E900F695A2 /* Game.swift in Sources */,
+				48D6634F1F6B45E900F695A2 /* Panel.swift in Sources */,
 				48AAF1121F6F0A510053FAAE /* PlayerMove.swift in Sources */,
 				48AAF11A1F6F433E0053FAAE /* CardService.swift in Sources */,
 				48D6634B1F6B40A300F695A2 /* Room.swift in Sources */,
@@ -934,6 +952,8 @@
 				48500FA11F56497300DCDB74 /* RoomUITableViewCell.swift in Sources */,
 				48D6634D1F6B449000F695A2 /* Card.swift in Sources */,
 				48AAF1071F6C12510053FAAE /* BattleController.swift in Sources */,
+				488CE1751F818A6900FCE4FF /* BattleStatus.swift in Sources */,
+				488CE1701F816FD500FCE4FF /* Player.swift in Sources */,
 				48AAF16D1F79EE3A0053FAAE /* MessageUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

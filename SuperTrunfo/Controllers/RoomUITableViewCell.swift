@@ -16,9 +16,11 @@ class RoomUITableViewCell: UITableViewCell {
     @IBOutlet weak var nameRoom: UILabel!
     @IBOutlet weak var nameChallenger: UILabel!
     @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var backgroundCellView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        backgroundCellView.backgroundColor = UIColor.darkGray
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

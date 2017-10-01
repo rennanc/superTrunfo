@@ -26,6 +26,7 @@ class BattleController : UIViewController{
     
     
     //***Variaveis do modelo***
+    var game : Game = Game()
     
     //atributos do desafiante
     var challengerMove : PlayerMove! = nil
@@ -36,6 +37,9 @@ class BattleController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //assumindo a responsabilidade do navigation controller
+        navigationController?.delegate = self
         
         //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Voltar", style: .plain, target: self, action: #selector(backAction))
         
@@ -49,8 +53,10 @@ class BattleController : UIViewController{
             
             if(playerMove.valueSkill > challengerMove.valueSkill){
                 self.showInfoMessage(title: "Ganhou!!!",message: "Você ganhou essa jogada")
-            }else{
+            }else if(playerMove.valueSkill < challengerMove.valueSkill){
                 self.showInfoMessage(title: "Perdeu!!!",message: "Você perdeu essa jogada")
+            }else{
+                self.showInfoMessage(title: "Empate!!!",message: "Vocês empataram, os 2 perderam")
             }
         }
         
@@ -81,10 +87,24 @@ class BattleController : UIViewController{
         self.viewCardPlayer.layer.borderWidth = 0.5
     }
     
+    //voltar para a sala
+    @IBAction func backButtonToRoom(_ sender: Any) {
+        performSegue(withIdentifier: "Room", sender: nil)
+    }
+    
+    
 }
 
 extension BattleController: UINavigationControllerDelegate{
-    @objc(navigationController:willShowViewController:animated:) func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool){
-        (viewController as? RoomController)?.receiveResult(result: 1);
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        
+        var battleStatus : BattleStatus = BattleStatus.draw
+        if(playerMove.valueSkill > challengerMove.valueSkill){
+            battleStatus = BattleStatus.win
+        }else if(playerMove.valueSkill < challengerMove.valueSkill){
+            battleStatus = BattleStatus.defeat
+        }
+        
+        (viewController as? RoomController)?.receiveResult(battleStatus: battleStatus, resultGame: game);
     }
 }

@@ -6,53 +6,83 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="roomCustomCell" id="iN0-l3-epB" customClass="RoomUITableViewCell" customModule="SuperTrunfo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="334" height="75"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zé Algusto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAJ-HF-061">
-                    <rect key="frame" x="118" y="35" width="241" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100m de distancia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne9-ps-Tpc">
-                    <rect key="frame" x="118" y="72" width="241" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sala 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Am-Rc-nTw">
-                    <rect key="frame" x="118" y="8" width="241" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="room-empty" translatesAutoresizingMaskIntoConstraints="NO" id="pc7-Lj-jc7">
-                    <rect key="frame" x="16" y="8" width="85" height="85"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82T-7W-bPX">
+                    <rect key="frame" x="0.0" y="0.0" width="334" height="75"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zé Algusto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAJ-HF-061">
+                            <rect key="frame" x="93" y="8" width="132" height="36"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <size key="shadowOffset" width="1" height="2"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="room-empty" translatesAutoresizingMaskIntoConstraints="NO" id="pc7-Lj-jc7">
+                            <rect key="frame" x="0.0" y="8" width="85" height="59"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="85" id="DiH-zG-EqZ"/>
+                            </constraints>
+                        </imageView>
+                        <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztv-zK-uo0">
+                            <rect key="frame" x="28" y="74" width="278" height="1"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="278" id="MRJ-I2-Wxk"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100m de distancia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne9-ps-Tpc">
+                            <rect key="frame" x="93" y="47" width="126" height="19"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <size key="shadowOffset" width="1" height="1"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="pc7-Lj-jc7" firstAttribute="top" secondItem="82T-7W-bPX" secondAttribute="topMargin" id="Ah5-BB-zZd"/>
+                        <constraint firstAttribute="bottom" secondItem="Ztv-zK-uo0" secondAttribute="bottom" id="GJ1-rX-3wv"/>
+                        <constraint firstItem="ne9-ps-Tpc" firstAttribute="leading" secondItem="pc7-Lj-jc7" secondAttribute="trailing" constant="8" symbolic="YES" id="Lxv-Zg-auN"/>
+                        <constraint firstItem="pc7-Lj-jc7" firstAttribute="leading" secondItem="82T-7W-bPX" secondAttribute="leading" id="RQR-CJ-KVK"/>
+                        <constraint firstItem="CAJ-HF-061" firstAttribute="leading" secondItem="pc7-Lj-jc7" secondAttribute="trailing" constant="8" symbolic="YES" id="SZs-sX-9iS"/>
+                        <constraint firstItem="Ztv-zK-uo0" firstAttribute="top" secondItem="ne9-ps-Tpc" secondAttribute="bottom" constant="8" symbolic="YES" id="Ux2-1I-j19"/>
+                        <constraint firstItem="pc7-Lj-jc7" firstAttribute="bottom" secondItem="82T-7W-bPX" secondAttribute="bottomMargin" id="dQN-sL-kjj"/>
+                        <constraint firstItem="Ztv-zK-uo0" firstAttribute="centerX" secondItem="82T-7W-bPX" secondAttribute="centerX" id="vWa-0E-SYe"/>
+                        <constraint firstItem="pc7-Lj-jc7" firstAttribute="top" secondItem="CAJ-HF-061" secondAttribute="top" id="yoo-K0-Yxh"/>
+                        <constraint firstItem="Ztv-zK-uo0" firstAttribute="top" secondItem="pc7-Lj-jc7" secondAttribute="bottom" constant="7" id="zp9-Sd-0Lz"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="82T-7W-bPX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Blk-m9-CXc"/>
+                <constraint firstItem="82T-7W-bPX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZK6-a2-DWd"/>
+                <constraint firstAttribute="trailing" secondItem="82T-7W-bPX" secondAttribute="trailing" id="kJw-dA-1KA"/>
+                <constraint firstAttribute="bottom" secondItem="82T-7W-bPX" secondAttribute="bottom" id="r1m-lQ-P2j"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="backgroundCellView" destination="82T-7W-bPX" id="zWN-3R-j6z"/>
+                <outlet property="backgroundView" destination="82T-7W-bPX" id="qnm-Lx-g6B"/>
                 <outlet property="distance" destination="ne9-ps-Tpc" id="AkF-NE-ew4"/>
                 <outlet property="imageStatus" destination="pc7-Lj-jc7" id="A7V-oW-oro"/>
                 <outlet property="nameChallenger" destination="CAJ-HF-061" id="254-Jf-V3x"/>
-                <outlet property="nameRoom" destination="3Am-Rc-nTw" id="mq8-XA-8UG"/>
             </connections>
-            <point key="canvasLocation" x="34.5" y="51"/>
+            <point key="canvasLocation" x="14" y="63.5"/>
         </view>
         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="03f-al-ZpW">
             <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
