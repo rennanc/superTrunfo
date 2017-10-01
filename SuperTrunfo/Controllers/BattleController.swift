@@ -84,7 +84,7 @@ class BattleController : UIViewController{
 }
 
 extension BattleController: UINavigationControllerDelegate{
-    func navigationController(_ navigationController: UINavigationController, willshow viewController: UIViewController, animated: Bool){
+    @objc(navigationController:willShowViewController:animated:) func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool){
         (viewController as? RoomController)?.receiveResult(result: 1);
     }
 }

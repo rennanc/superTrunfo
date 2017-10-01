@@ -33,6 +33,55 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4840D88A1F808125000C8534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C0881C4C379166467FF1AC02ECC90B48;
+			remoteInfo = AlamofireObjectMapper;
+		};
+		4840D88C1F808125000C8534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 14B0B97902638B6518CA11D931B0DFB3;
+			remoteInfo = "leveldb-library";
+		};
+		4840D88E1F808125000C8534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 615C2AD63693B8A03FD16C10C1AB1CBF;
+			remoteInfo = ObjectMapper;
+		};
+		4840D8901F808125000C8534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D3C962E669ED1F20AC6E35FB9D180E85;
+			remoteInfo = RxBlocking;
+		};
+		4840D8921F808125000C8534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BD0EAB2CA977EE7C831F5DC65AA6C1D;
+			remoteInfo = RxCocoa;
+		};
+		4840D8941F808125000C8534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BB861337312F17BBB41A8483BB08A957;
+			remoteInfo = RxSwift;
+		};
+		4840D8961F808125000C8534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 21533850736C046EA29BCB8F2ADCFE26;
+			remoteInfo = RxTest;
+		};
 		48500F961F56381E00DCDB74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48500F901F56381E00DCDB74 /* Pods.xcodeproj */;
@@ -224,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				48D663471F6B31BC00F695A2 /* Alamofire.framework */,
+				4840D88B1F808125000C8534 /* AlamofireObjectMapper.framework */,
 				48AAF17F1F7B4D420053FAAE /* Bolts.framework */,
 				48AAF1811F7B4D420053FAAE /* FacebookCore.framework */,
 				48AAF1831F7B4D420053FAAE /* FacebookLogin.framework */,
@@ -232,10 +282,16 @@
 				48AAF1241F6F69320053FAAE /* GoogleToolboxForMac.framework */,
 				48AAF1261F6F69320053FAAE /* GTMOAuth2.framework */,
 				48AAF1281F6F69320053FAAE /* GTMSessionFetcher.framework */,
+				4840D88D1F808125000C8534 /* leveldb.framework */,
 				48AAF14F1F708B830053FAAE /* nanopb.framework */,
+				4840D88F1F808125000C8534 /* ObjectMapper.framework */,
 				48500F971F56381E00DCDB74 /* Pods_SuperTrunfo.framework */,
 				48500F991F56381E00DCDB74 /* Pods_SuperTrunfoTests.framework */,
 				48500F9B1F56381E00DCDB74 /* Pods_SuperTrunfoUITests.framework */,
+				4840D8911F808125000C8534 /* RxBlocking.framework */,
+				4840D8931F808125000C8534 /* RxCocoa.framework */,
+				4840D8951F808125000C8534 /* RxSwift.framework */,
+				4840D8971F808125000C8534 /* RxTest.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -491,6 +547,55 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		4840D88B1F808125000C8534 /* AlamofireObjectMapper.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AlamofireObjectMapper.framework;
+			remoteRef = 4840D88A1F808125000C8534 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4840D88D1F808125000C8534 /* leveldb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = leveldb.framework;
+			remoteRef = 4840D88C1F808125000C8534 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4840D88F1F808125000C8534 /* ObjectMapper.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ObjectMapper.framework;
+			remoteRef = 4840D88E1F808125000C8534 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4840D8911F808125000C8534 /* RxBlocking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxBlocking.framework;
+			remoteRef = 4840D8901F808125000C8534 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4840D8931F808125000C8534 /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = 4840D8921F808125000C8534 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4840D8951F808125000C8534 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = 4840D8941F808125000C8534 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4840D8971F808125000C8534 /* RxTest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxTest.framework;
+			remoteRef = 4840D8961F808125000C8534 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		48500F971F56381E00DCDB74 /* Pods_SuperTrunfo.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;

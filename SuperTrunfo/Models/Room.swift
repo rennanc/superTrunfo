@@ -11,9 +11,9 @@ import ObjectMapper
 
 //Dados da Celula da sala
 struct Room : Mappable{
-    var id: Int!
+    var id: String!
     var name: String!
-    var challenger: String!
+    var creator: String!
     var distance: Double!
     var image: UIImage!
     var available : Bool!
@@ -31,6 +31,7 @@ struct Room : Mappable{
     mutating func mapping(map: Map) {
         id                  <- map["id"]
         name                <- map["name"]
+        creator             <- map["creator"]
         available           <- map["available"]
         latitude            <- map["latitude"]
         longitude           <- map["longitude"]

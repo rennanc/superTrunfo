@@ -16,7 +16,7 @@ import ObjectMapper
 
 class CardService {
     
-    
+    var ref: DatabaseReference!
     
     
     /*
@@ -184,21 +184,52 @@ class CardService {
         //return arrayOfRooms
     }
     
-    func getRooms2(completionHandler: @escaping ([Room], NSError?) -> ()) -> [Room]!{
+    func getRooms2(completionHandler: @escaping ([Room], NSError?) -> ()){
         
-        var rooms : [Room] = [Room]()
+        
         
         //criando referencia e referenciando o filho rooms
-        var ref: DatabaseReference!
         ref = Database.database().reference(withPath: "rooms")
         
         ref.observe(.value, with: { snapshot in
-            if let jsonArray = snapshot.value as? [[String : AnyObject]]{
-                rooms = Mapper<Room>().mapArray(JSONArray: jsonArray)
+            
+            var rooms : [Room] = [Room]()
+            if let response = snapshot.value as? [String : AnyObject]{
+                let allKeys = Array(response.keys)
+                
+                for key in allKeys {
+                    let item = response[key] as! [String: AnyObject]
+                    
+                    rooms.append(Mapper<Room>().map(JSONObject: item)!)
+                }
                 completionHandler(rooms, nil)
             }
+            
+            /*
+            if let jsonArray = snapshot.value as? [[String : AnyObject]]{
+                
+                
+                rooms = Mapper<Room>().mapArray(JSONArray: jsonArray)
+                completionHandler(rooms, nil)
+            }*/
         })
-        return nil
+    }
+    
+    func createRoom (room : Room){
+        
+        //criando referencia e referenciando o filho rooms
+        ref = Database.database().reference(withPath: "rooms")
+        
+        var newRoom = room
+        
+        newRoom.id = "1"
+        newRoom.available = true
+        //newRoom.name="sala" + requestID
+        
+        //salvando sala
+        let JsonString = Mapper().toJSON(newRoom) as [String:AnyObject]
+        
+        ref.childByAutoId().setValue(JsonString)
     }
     
     

@@ -143,8 +143,6 @@ class RoomController : UIViewController{
     
     //obtem todos as cartas do jogador
     func showCards(){
-        //carregando as cartas pela primeira vez
-       // cards = cardService.getCards(completionHandler: nil)
         cardService.getCards { responseObject, error in
             self.buildPlayerDeck(cards: responseObject)
             

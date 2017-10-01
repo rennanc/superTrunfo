@@ -46,8 +46,6 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         cardService.getRooms2 { responseObject, error in
             self.arrayOfRooms = responseObject
             self.tableRooms.reloadData()
-            
-            //self.buildPlayerDeck(cards: responseObject)
         }
         
         //Remember about [weak self]/[unowned self] to prevent retain cycles!
@@ -63,7 +61,15 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.didReceiveMemoryWarning()
     }
     
-    
+    @IBAction func createRoom(_ sender: Any){
+        var newRoom = Room()
+        newRoom.creator = playerName
+        currentLocation = locManager.location
+        newRoom.latitude = currentLocation.coordinate.latitude
+        newRoom.longitude = currentLocation.coordinate.longitude
+        
+        cardService.createRoom(room: newRoom)
+    }
     
     
     //obtem localizacao do usuario
@@ -119,7 +125,7 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         //definindo dados da celula
         cell.imageStatus.image = room.image
         cell.nameRoom.text = room.name
-        cell.nameChallenger.text = room.challenger
+        cell.nameChallenger.text = room.creator
         
         if (!room.available){
             cell.contentView.backgroundColor = UIColor(red: 102/256, green: 255/256, blue: 255/256, alpha: 0.66)
