@@ -36,6 +36,9 @@ class BattleController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Voltar", style: .plain, target: self, action: #selector(backAction))
+        
         beaultifulLayout()
         
         if playerMove != nil {
@@ -70,9 +73,18 @@ class BattleController : UIViewController{
         self.viewCardChallenger.insertSubview(cardImage, at: 0)
         self.viewCardChallenger.layer.cornerRadius = 10.0
         self.viewCardChallenger.layer.borderWidth = 0.5
-        self.viewCardPlayer.insertSubview(cardImage, at: 0)
+        
+        let cardImage2 = UIImageView(frame: self.viewCardPlayer.bounds)
+        cardImage2.image =  UIImage(named: "cardMarvel")
+        self.viewCardPlayer.insertSubview(cardImage2, at: 0)
         self.viewCardPlayer.layer.cornerRadius = 10.0
         self.viewCardPlayer.layer.borderWidth = 0.5
     }
     
+}
+
+extension BattleController: UINavigationControllerDelegate{
+    func navigationController(_ navigationController: UINavigationController, willshow viewController: UIViewController, animated: Bool){
+        (viewController as? RoomController)?.receiveResult(result: 1);
+    }
 }

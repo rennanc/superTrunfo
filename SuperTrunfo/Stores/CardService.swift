@@ -11,8 +11,12 @@ import Alamofire
 import AlamofireObjectMapper
 import RxSwift
 import RxCocoa
+import Firebase
+import ObjectMapper
 
 class CardService {
+    
+    
     
     
     /*
@@ -20,15 +24,10 @@ class CardService {
     */
     func getCards(completionHandler: @escaping ([Card], NSError?) -> ()) -> [Card]!{
         
-        let cards = [Card]()
+        var cards = [Card]()
         
+        /*
         Alamofire.request("https://infnet-ios-api.herokuapp.com/sortDeck").responseArray { (response: DataResponse<[Card]>) in
-            //responseJSON { response in
-            /*
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            */
             
             switch response.result {
             case .success(let value):
@@ -37,6 +36,32 @@ class CardService {
                 completionHandler([Card](), error as NSError)
             }
         }
+        */
+        
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference(withPath: "cards")
+        
+        ref.observe(.value, with: { snapshot in
+            if let jsonArray = snapshot.value as? [[String : AnyObject]]{
+                cards = Mapper<Card>().mapArray(JSONArray: jsonArray)
+                completionHandler(cards, nil)
+            }
+            
+            
+        })
+        
+        /*
+        ref.child("cards").observeSingleEvent(of: .value, with: { (snapshot) in
+        
+            let values = snapshot.value as? NSDictionary
+            let teste =  values?["category"] as? String ?? ""
+            //get user value
+            //cards = [Card](JSONString: values)!
+        }) { (error) in
+            print(error.localizedDescription)
+        }*/
+    
         /* mock
         var cards : [Card] = [Card]()
         
@@ -77,7 +102,7 @@ class CardService {
         var card : Card = Card()
         card.id = 1
         card.heroName = "Homem Aranha" + String(1)
-        card.heroImage =  UIImage(named: "add")
+        //card.heroImage =  UIImage(named: "add")
         card.skillValue1 = Int(arc4random_uniform(10))
         card.skillValue2 = Int(arc4random_uniform(10))
         card.skillValue3 = Int(arc4random_uniform(10))
@@ -147,6 +172,8 @@ class CardService {
         
         
         
+        
+        
         /*adicionando dados mockados na celula
         let arrayOfRooms = [
             Room(id: 1, name: "sala 1", challenger: "Joao Almeida", distance: 100,  image: #imageLiteral(resourceName: "room-full")),
@@ -155,6 +182,23 @@ class CardService {
         ]
         */
         //return arrayOfRooms
+    }
+    
+    func getRooms2(completionHandler: @escaping ([Room], NSError?) -> ()) -> [Room]!{
+        
+        var rooms : [Room] = [Room]()
+        
+        //criando referencia e referenciando o filho rooms
+        var ref: DatabaseReference!
+        ref = Database.database().reference(withPath: "rooms")
+        
+        ref.observe(.value, with: { snapshot in
+            if let jsonArray = snapshot.value as? [[String : AnyObject]]{
+                rooms = Mapper<Room>().mapArray(JSONArray: jsonArray)
+                completionHandler(rooms, nil)
+            }
+        })
+        return nil
     }
     
     

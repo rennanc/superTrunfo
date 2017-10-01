@@ -165,21 +165,34 @@ class RoomController : UIViewController{
             showCard(card: cards[0])
             
             //exibe a miniatura das outras cartas na mao do jogador
-            imageCard1.image = cards[1].heroImage
-            imageCard2.image = cards[2].heroImage
-            imageCard3.image = cards[3].heroImage
-            imageCard4.image = cards[5].heroImage
-            imageCard5.image = cards[6].heroImage
-            imageCard6.image = cards[7].heroImage
+            imageCard1.image = getImageFromUrl(imageUrl: cards[1].heroImage)
+            imageCard2.image = getImageFromUrl(imageUrl: cards[2].heroImage)
+            imageCard3.image = getImageFromUrl(imageUrl: cards[3].heroImage)
+            imageCard4.image = getImageFromUrl(imageUrl: cards[5].heroImage)
+            imageCard5.image = getImageFromUrl(imageUrl: cards[6].heroImage)
+            imageCard6.image = getImageFromUrl(imageUrl: cards[7].heroImage)
         }else{
             showErrorMessage(message: "Ocorreu um erro ao obter as cartas, saia do jogo e tente novamente.")
         }
     }
     
+    //TODO COLOCAR EM UM UTIL
+    func getImageFromUrl(imageUrl : String) -> UIImage{
+        if imageUrl != "" {
+            let url = URL(string: imageUrl)
+            let data = try? Data(contentsOf: url!)
+            if let imageData = data {
+                let image : UIImage = UIImage(data: imageData)!
+                return image
+            }
+        }
+        return UIImage()
+    }
+    
     //mostra a carta selecionada em evidencia
     func showCard(card : Card){
         labelHeroName.text = card.heroName
-        imageHero.image = card.heroImage
+        imageHero.image = getImageFromUrl(imageUrl: card.heroImage)
         labelSkillValue1.text = String(card.skillValue1)
         labelSkillValue2.text = String(card.skillValue2)
         labelSkillValue3.text = String(card.skillValue3)
@@ -257,6 +270,10 @@ class RoomController : UIViewController{
         }else{
             self.showInfoMessage(message: "Você foi desafiado, aguarde o seu desafiante escolher uma carta")
         }
+    }
+    
+    func receiveResult(result : Int){
+        self.showInfoMessage(message: "retorno" + String(result))
     }
     
     

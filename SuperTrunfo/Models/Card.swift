@@ -13,7 +13,7 @@ import ObjectMapper
 struct Card : Mappable{
     var id: Int!
     var heroName: String!
-    var heroImage: UIImage!
+    var heroImage: String!
     var skillValue1: Int!
     var skillValue2: Int!
     var skillValue3: Int!
@@ -31,12 +31,13 @@ struct Card : Mappable{
     }
     
     mutating func mapping(map: Map) {
-        //id 	<- map["id"]
+        id 	<- map["id"]
         heroName    <- map["name"]
         rank        <- map["rank"]
         category 	<- map["category"]
+        heroImage   <- map["imageUrl"]
         skillValue1 	<- map["intelligence"]
-        skillValue2 	<- map["skill"]
+        skillValue2 	<- map["equipment"]
         skillValue3 	<- map["speed"]
         skillValue4 	<- map["strength"]
         

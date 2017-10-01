@@ -41,19 +41,29 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         //delegando essa view para controlar a tabela
         tableRooms.delegate = self
         
+        
+        
+        cardService.getRooms2 { responseObject, error in
+            self.arrayOfRooms = responseObject
+            self.tableRooms.reloadData()
+            
+            //self.buildPlayerDeck(cards: responseObject)
+        }
+        
         //Remember about [weak self]/[unowned self] to prevent retain cycles!
-        cardService.getRooms()
+        /*cardService.getRooms()
             .subscribe(onNext: { [weak self] (element) in
-                var response = element
-                self?.arrayOfRooms = [Room](JSONString: response)!
+                self?.arrayOfRooms = [Room](JSONString: element)!
                 self?.tableRooms.reloadData()
-            }).addDisposableTo(disposeBag)
+            }).addDisposableTo(disposeBag)*/
         //arrayOfRooms =
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
     
     
     //obtem localizacao do usuario
