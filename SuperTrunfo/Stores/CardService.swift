@@ -25,7 +25,7 @@ class CardService {
     func getCards(completionHandler: @escaping ([Card], NSError?) -> ()) -> [Card]!{
         
         var cards = [Card]()
-        
+        /*
         //obtendo por servico da api via resr
         Alamofire.request("https://infnet-ios-api.herokuapp.com/sortDeck").responseArray { (response: DataResponse<[Card]>) in
             
@@ -38,7 +38,7 @@ class CardService {
         }
         
         //obtendo por firebase database
-        /*
+        */
         var ref: DatabaseReference!
         
         ref = Database.database().reference(withPath: "cards")
@@ -51,7 +51,7 @@ class CardService {
             
             
         })
-        */
+        
         /*
         ref.child("cards").observeSingleEvent(of: .value, with: { (snapshot) in
         

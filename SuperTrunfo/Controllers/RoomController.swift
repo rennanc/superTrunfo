@@ -128,7 +128,7 @@ class RoomController : UIViewController{
     
     //definindo gesto para adicionar acao as imagens para troca
     func setupCardsTapGesture(){
-        listImageCardsInHands = [UIImageView](arrayLiteral: imageCard1,
+        listImageCardsInHands = [UIImageView](arrayLiteral: imageHero, imageCard1,
                                               imageCard2,
                                               imageCard3,
                                               imageCard4,
@@ -191,7 +191,7 @@ class RoomController : UIViewController{
     
     //mostra a carta selecionada em evidencia
     func showCard(card : Card){
-        labelHeroName.text = card.heroName
+        labelHeroName.text = card.category + String(card.rank) + " - " + card.heroName
         imageHero.image = getImageFromUrl(imageUrl: card.heroImage)
         labelSkillValue1.text = String(card.skillValue1)
         labelSkillValue2.text = String(card.skillValue2)
@@ -209,12 +209,21 @@ class RoomController : UIViewController{
         
         //obtem a carta selecionada
         let selectedCard = cards[selectedView.tag]
+        
+        let imageViewSelected : UIImageView = listImageCardsInHands[selectedView.tag]
+        
         //troca a carta exibida pela a selecionada na tela
         showCard(card: selectedCard)
         
         //troca a ordem da carta mostrada pela carta selecionada no array
         cards[0] = selectedCard
+        
         cards[selectedView.tag] = cardShowed
+        
+        
+        
+        imageViewSelected.image = getImageFromUrl(imageUrl: cardShowed.heroImage)
+        
     }
     
     //escolher skill, será definido qual é pela tag
@@ -299,11 +308,11 @@ class RoomController : UIViewController{
         refreshPlayerPanel()
         //TODO
         //cardService.gravarResultado()
-        //self.showInfoMessage(message: "retorno" + String(describing: battleStatus))
         checkFinalResult()
     }
     
     func changeOrderOfDeck(){
+        
         //var firstCard
     }
     
@@ -321,6 +330,10 @@ class RoomController : UIViewController{
         }else if(playerPanel.numberOfCards == 32){
             showInfoMessage(message: "Fim de Partida, você ganhou")
         }
+        //TODO fechar sala
+        //cardService.closeRoom(roomId)
+        //TODO
+        //voltar para o lobby
     }
     
     
