@@ -12,8 +12,8 @@ import ObjectMapper
 struct PlayerMove  : Mappable{
     var cardId : String!
     var player : Player!
-    var nameSkill: String!
     var valueSkill: Int!
+    var nameSkill: String!
     var image: UIImage!
     
     init(){
@@ -27,7 +27,6 @@ struct PlayerMove  : Mappable{
     mutating func mapping(map: Map) {
         cardId       <- map["cardId"]
         player       <- map["player"]
-        nameSkill    <- map["nameSkill"]
         valueSkill   <- map["valueSkill"]
     }
 }

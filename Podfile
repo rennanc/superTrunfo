@@ -6,7 +6,7 @@ target 'SuperTrunfo' do
   use_frameworks!
 
   # Pods for SuperTrunfo
-  pod 'Alamofire', '~> 4.5'
+  pod 'Alamofire', '~> 4.4’
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   pod 'FacebookCore'

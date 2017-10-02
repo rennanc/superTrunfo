@@ -56,14 +56,18 @@ class RoomController : UIViewController{
     var cardService : CardService = CardService()
     
     //*** modelos ***
+    var playerName : String = ""
     var playerPanel : Panel! = Panel()
     var playerMove : PlayerMove!
     var cards : [Card] = [Card]()
     var cardsPlayer : [Card] = [Card]()
     var cardsChallenger : [Card] = [Card]()
+    var room : Room = Room()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.prompt = nil
+        
         beaultifulLayout()
         
         setupSkillsTapGesture()
@@ -252,48 +256,43 @@ class RoomController : UIViewController{
     
     
     
-    //Envia a habilidade selecionada para a tela de batalha para obter o resultado da disputa
-    func sendToBattlePage(playerMove : PlayerMove){
-        
-        //obtendo resultado da jogada
-        let challengerMove = cardService.getChallengerMove();
-        
-        //obtendo a instancia da controller
-        let controllerToSend = storyboard?.instantiateViewController(withIdentifier: "Battle") as! BattleController
-        
-        
-        //TODO criacao de nova partida
-        //cardService.createGame()
-        var game : Game = Game()
-        game.playerMoves.append(playerMove)
-        game.playerMoves.append(challengerMove)
-        controllerToSend.game = game
-        
-        
-        //transferindo objeto para a nova pagina
-        controllerToSend.playerMove = playerMove
-        controllerToSend.challengerMove = challengerMove
-        
-        //enviando o usuario para a pagina da batalha
-        navigationController?.pushViewController(controllerToSend, animated: true)
-    }
+    
     
     /*verifica se o jogador é o desafiante ou nao
     * e mostra as instrucoes para seguir
     */
     func startGame(){
-        let challenge = cardService.getChalenge()
-        if(challenge){
+        
+        var isChallenger = false
+        // verifica se é o desafiantedesafiante
+        if(room.creator != playerName){
+            isChallenger = true
+        }
+        if(isChallenger){
+            cardService.joinRoom(roomId: room.id, playerName: playerName)
             self.showInfoMessage(message: "Você é o desafiante, a partida começa por você.\n Escolha uma carta entre as 7 e entao, escolha a melhor Habilidade clicando sobre elas.")
         }else{
-            self.showInfoMessage(message: "Você foi desafiado, aguarde o seu desafiante escolher uma carta")
+           // cardService.waitChallenger(completionHandler: <#([Player], NSError?) -> ()#>, roomId: room.id, playerName: room.creator)
+            
+            cardService.getRooms2 { responseObject, error in
+                
+                if(responseObject[1].players != nil && responseObject[1].players.count > 1){
+                    self.showInfoMessage(message: "Você foi desafiado por " + responseObject[1].players[1].name + ", aguarde o seu desafiante escolher uma carta")
+                }
+            }
+            
+            /*cardService.waitChallenger(completionHandler: { responseObject, error in
+                var teste = responseObject
+            }, roomId: room.id, playerName: room.creator)*/
+            
+            
         }
     }
     
     /*Funcao para receber resultado da jogada enviada pela tela de 
      *batalha
      */
-    func receiveResult(battleStatus : BattleStatus, resultGame: Game){
+    func receiveResult(battleStatus : BattleStatus, resultGame: Round){
         
         if(battleStatus == BattleStatus.win){
             playerPanel.numberWinners = playerPanel.numberWinners + 1
@@ -350,5 +349,30 @@ class RoomController : UIViewController{
         self.present(alert, animated: true, completion: nil)
     }
     
+    //Envia a habilidade selecionada para a tela de batalha para obter o resultado da disputa
+    func sendToBattlePage(playerMove : PlayerMove){
+        
+        //obtendo resultado da jogada
+        let challengerMove = cardService.getChallengerMove();
+        
+        //obtendo a instancia da controller
+        let controllerToSend = storyboard?.instantiateViewController(withIdentifier: "Battle") as! BattleController
+        
+        
+        //TODO criacao de nova partida
+        //cardService.createGame()
+        var round : Round = Round()
+        round.playerMoves.append(playerMove)
+        round.playerMoves.append(challengerMove)
+        controllerToSend.round = round
+        
+        
+        //transferindo objeto para a nova pagina
+        controllerToSend.playerMove = playerMove
+        controllerToSend.challengerMove = challengerMove
+        
+        //enviando o usuario para a pagina da batalha
+        navigationController?.pushViewController(controllerToSend, animated: true)
+    }
     
 }

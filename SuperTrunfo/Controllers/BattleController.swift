@@ -26,7 +26,7 @@ class BattleController : UIViewController{
     
     
     //***Variaveis do modelo***
-    var game : Game = Game()
+    var round : Round = Round()
     
     //atributos do desafiante
     var challengerMove : PlayerMove! = nil
@@ -105,6 +105,6 @@ extension BattleController: UINavigationControllerDelegate{
             battleStatus = BattleStatus.defeat
         }
         
-        (viewController as? RoomController)?.receiveResult(battleStatus: battleStatus, resultGame: game);
+        (viewController as? RoomController)?.receiveResult(battleStatus: battleStatus, resultGame: round);
     }
 }

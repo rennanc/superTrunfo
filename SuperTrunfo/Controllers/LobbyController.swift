@@ -35,12 +35,22 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //solicitando permissao para acesso ao gps
-        locManager.requestWhenInUseAuthorization()
+        navigationController?.isNavigationBarHidden = false
         
         //delegando essa view para controlar a tabela
         tableRooms.delegate = self
+        setupLobby()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func setupLobby(){
+        navigationItem.prompt = playerName
         
+        //solicitando permissao para acesso ao gps
+        locManager.requestWhenInUseAuthorization()
         
         
         cardService.getRooms2 { responseObject, error in
@@ -50,15 +60,11 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         //Remember about [weak self]/[unowned self] to prevent retain cycles!
         /*cardService.getRooms()
-            .subscribe(onNext: { [weak self] (element) in
-                self?.arrayOfRooms = [Room](JSONString: element)!
-                self?.tableRooms.reloadData()
-            }).addDisposableTo(disposeBag)*/
+         .subscribe(onNext: { [weak self] (element) in
+         self?.arrayOfRooms = [Room](JSONString: element)!
+         self?.tableRooms.reloadData()
+         }).addDisposableTo(disposeBag)*/
         //arrayOfRooms =
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     @IBAction func createRoom(_ sender: Any){
@@ -67,6 +73,9 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         currentLocation = locManager.location
         newRoom.latitude = currentLocation.coordinate.latitude
         newRoom.longitude = currentLocation.coordinate.longitude
+        var player : Player = Player()
+        player.name = playerName
+        newRoom.players.append(player)
         
         cardService.createRoom(room: newRoom)
     }
@@ -93,12 +102,14 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         do {
             try firebaseAuth.signOut()
             
+            performSegue(withIdentifier: "segueLogin", sender: self)
+            /*
             //obtendo a instancia da controller do Login
             let controllerToSend = storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginController
             controllerToSend.navigationItem.hidesBackButton = true
             //retornando para a tela de login
             navigationController?.setNavigationBarHidden(true, animated: true)
-            navigationController?.pushViewController(controllerToSend, animated: true)
+            navigationController?.pushViewController(controllerToSend, animated: true)*/
             
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
@@ -158,6 +169,8 @@ class LobbyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         //recuperando objeto selecionado
         let room = arrayOfRooms[indexPath.row]
         controllerToSend.navigationItem.prompt = room.name
+        controllerToSend.room = room
+        controllerToSend.playerName = playerName
         
         //entrando na sala escolhida
         navigationController?.pushViewController(controllerToSend, animated: true)

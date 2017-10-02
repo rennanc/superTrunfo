@@ -25,6 +25,8 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.isNavigationBarHidden = true
+        
         //adicionando fundo na view
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image =  UIImage(named: "loginMarvel")
@@ -73,9 +75,28 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
         }
     }
     
+    //prepare for segue para passar parametros do usuario
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueLobby2"{
+            if segue.destination is UINavigationController {
+                var viewController = segue.destination as! UINavigationController
+                let targetViewController = viewController.topViewController as! LobbyController
+                targetViewController.playerName = txtLogin.text!
+            }
+        }
+    }
+    
     //envia para a pagina de lobby com as salas
     func sendToLobby(){
-        performSegue(withIdentifier: "segueLobby", sender: self)
+        //performSegue(withIdentifier: "segueLobby", sender: self)
+        
+        //obtendo a instancia da controller
+        let controllerToSend = storyboard?.instantiateViewController(withIdentifier: "Lobby") as! LobbyController
+        
+        controllerToSend.playerName = txtLogin.text!
+        
+        //enviando o usuario para a pagina da batalha
+        navigationController?.pushViewController(controllerToSend, animated: true)
     }
     
     func firebaseLogin(_ credential: AuthCredential) {

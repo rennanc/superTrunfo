@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		48500F9D1F5646A300DCDB74 /* RoomCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48500F9C1F5646A300DCDB74 /* RoomCustomCell.xib */; };
 		48500FA11F56497300DCDB74 /* RoomUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48500FA01F56497300DCDB74 /* RoomUITableViewCell.swift */; };
-		488CE16E1F816F4000FCE4FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CE16D1F816F4000FCE4FF /* Game.swift */; };
+		488CE16E1F816F4000FCE4FF /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CE16D1F816F4000FCE4FF /* Round.swift */; };
 		488CE1701F816FD500FCE4FF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CE16F1F816FD500FCE4FF /* Player.swift */; };
 		488CE1751F818A6900FCE4FF /* BattleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CE1741F818A6900FCE4FF /* BattleStatus.swift */; };
 		48AAF1071F6C12510053FAAE /* BattleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AAF1061F6C12510053FAAE /* BattleController.swift */; };
@@ -201,7 +201,7 @@
 		48500F901F56381E00DCDB74 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		48500F9C1F5646A300DCDB74 /* RoomCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomCustomCell.xib; path = Views/RoomCustomCell.xib; sourceTree = "<group>"; };
 		48500FA01F56497300DCDB74 /* RoomUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomUITableViewCell.swift; path = Controllers/RoomUITableViewCell.swift; sourceTree = "<group>"; };
-		488CE16D1F816F4000FCE4FF /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Models/Game.swift; sourceTree = "<group>"; };
+		488CE16D1F816F4000FCE4FF /* Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Round.swift; path = Models/Round.swift; sourceTree = "<group>"; };
 		488CE16F1F816FD500FCE4FF /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Models/Player.swift; sourceTree = "<group>"; };
 		488CE1741F818A6900FCE4FF /* BattleStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BattleStatus.swift; path = Models/Enums/BattleStatus.swift; sourceTree = "<group>"; };
 		48AAF1061F6C12510053FAAE /* BattleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BattleController.swift; path = Controllers/BattleController.swift; sourceTree = "<group>"; };
@@ -396,7 +396,7 @@
 			children = (
 				488CE1711F818A0000FCE4FF /* Enums */,
 				488CE16F1F816FD500FCE4FF /* Player.swift */,
-				488CE16D1F816F4000FCE4FF /* Game.swift */,
+				488CE16D1F816F4000FCE4FF /* Round.swift */,
 				48AAF1111F6F0A510053FAAE /* PlayerMove.swift */,
 				48D6634A1F6B40A300F695A2 /* Room.swift */,
 				48D6634C1F6B449000F695A2 /* Card.swift */,
@@ -940,7 +940,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48AAF1161F6F12F40053FAAE /* LoginController.swift in Sources */,
-				488CE16E1F816F4000FCE4FF /* Game.swift in Sources */,
+				488CE16E1F816F4000FCE4FF /* Round.swift in Sources */,
 				48EA11E61F54FF61002FBB13 /* LobbyController.swift in Sources */,
 				48D6634F1F6B45E900F695A2 /* Panel.swift in Sources */,
 				48AAF1121F6F0A510053FAAE /* PlayerMove.swift in Sources */,

@@ -25,8 +25,8 @@ class CardService {
     func getCards(completionHandler: @escaping ([Card], NSError?) -> ()) -> [Card]!{
         
         var cards = [Card]()
-        /*
-        //obtendo por servico da api via resr
+        
+        //obtendo por servico da api via rest
         Alamofire.request("https://infnet-ios-api.herokuapp.com/sortDeck").responseArray { (response: DataResponse<[Card]>) in
             
             switch response.result {
@@ -38,7 +38,7 @@ class CardService {
         }
         
         //obtendo por firebase database
-        */
+        /*
         var ref: DatabaseReference!
         
         ref = Database.database().reference(withPath: "cards")
@@ -51,7 +51,7 @@ class CardService {
             
             
         })
-        
+        */
         /*
         ref.child("cards").observeSingleEvent(of: .value, with: { (snapshot) in
         
@@ -186,9 +186,6 @@ class CardService {
     }
     
     func getRooms2(completionHandler: @escaping ([Room], NSError?) -> ()){
-        
-        
-        
         //criando referencia e referenciando o filho rooms
         ref = Database.database().reference(withPath: "rooms")
         
@@ -205,40 +202,56 @@ class CardService {
                 }
                 completionHandler(rooms, nil)
             }
-            
-            /*
-            if let jsonArray = snapshot.value as? [[String : AnyObject]]{
-                
-                
-                rooms = Mapper<Room>().mapArray(JSONArray: jsonArray)
-                completionHandler(rooms, nil)
-            }*/
         })
     }
     
     func createRoom (room : Room){
+        
+        let params : String =  room.toJSONString(prettyPrint: true)!
+        
+        let teste : Parameters = Parameters()
+        
+        /*
+        Alamofire.request("https://infnet-ios-api.herokuapp.com/createRoom", method: .put, parameters: params, encoding: JSONEncoding.default).responseObject(keyPath: "room") { (response: DataResponse<Room>) in
+            
+            switch response.result {
+            case .success(let value): break
+                //completionHandler(value, nil)
+            case .failure(let error): break
+                //completionHandler([Card](), error as NSError)
+            }
+        }
+        
+        */
+        
+        
         
         //criando referencia e referenciando o filho rooms
         ref = Database.database().reference(withPath: "rooms")
         
         var newRoom = room
         
-        newRoom.id = "1"
+        let requestID = ref.childByAutoId().key
+        
+        newRoom.id = requestID
         newRoom.available = true
         //newRoom.name="sala" + requestID
         
         //salvando sala
         let JsonString = Mapper().toJSON(newRoom) as [String:AnyObject]
         
-        ref.childByAutoId().setValue(JsonString)
+        ref.child(requestID).setValue(JsonString)
+        //ref.childByAutoId().setValue(JsonString)
+        
     }
     
     
     /*
      * obtem a jogada do desafiante
      */
-    func getChalenge() -> Bool{
-        /*Alamofire.request("https://httpbin.org/get").responseJSON { response in
+    func joinRoom(roomId: String, playerName: String) -> Bool{
+        /*
+        Alamofire.request("https://httpbin.org/get").responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
@@ -252,6 +265,34 @@ class CardService {
             }
         }*/
         
+        let jsonString : String =  "{playerName: \"" + playerName + "\" }"
+        
+        //criando referencia e referenciando o filho rooms
+        ref = Database.database().reference(withPath: "rooms/" + roomId + "/players")
+        
+        ref.childByAutoId().setValue(jsonString)
+        
         return true
+    }
+    
+    func waitChallenger(completionHandler: @escaping ([Player], NSError?) -> (), roomId: String, playerName: String){
+        
+        //criando referencia para escutar a sala
+        ref = Database.database().reference(withPath: "rooms/" + roomId + "/players/")
+        
+        ref.observe(.value, with: { snapshot in
+            
+            var players : [Player] = [Player]()
+            if let response = snapshot.value as? [String : AnyObject]{
+                let allKeys = Array(response.keys)
+                
+                for key in allKeys {
+                    let item = response[key] as! [String: AnyObject]
+                    
+                    players.append(Mapper<Player>().map(JSONObject: item)!)
+                }
+                completionHandler(players, nil)
+            }
+        })
     }
 }

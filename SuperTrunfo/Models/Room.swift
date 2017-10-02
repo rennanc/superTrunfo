@@ -20,8 +20,8 @@ struct Room : Mappable{
     var latitude : Double!
     var longitude : Double!
     
-    var games : [Game]!
-    var players : [Player]!
+    var rounds : [Round]! = [Round]()
+    var players : [Player]! = [Player]()
         
     init(){
         
@@ -38,6 +38,8 @@ struct Room : Mappable{
         available           <- map["available"]
         latitude            <- map["latitude"]
         longitude           <- map["longitude"]
+        players             <- map["players"]
+        rounds              <- map["rounds"]
         
     }
 }

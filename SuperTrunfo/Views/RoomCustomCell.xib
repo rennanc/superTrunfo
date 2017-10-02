@@ -20,8 +20,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="334" height="75"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zé Algusto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAJ-HF-061">
-                            <rect key="frame" x="93" y="8" width="132" height="36"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <rect key="frame" x="93" y="8" width="107" height="28.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                             <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
