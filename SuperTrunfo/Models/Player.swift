@@ -12,6 +12,7 @@ import ObjectMapper
 //atributos da partida
 struct Player : Mappable{
     var name: String!
+    var cardsId : [Int] = [Int]()
     
     init(){
         
@@ -23,6 +24,7 @@ struct Player : Mappable{
     
     mutating func mapping(map: Map) {
         name       <- map["playerName"]
+        cardsId    <- map["cardsId"]
         
     }
 }

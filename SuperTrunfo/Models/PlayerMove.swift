@@ -11,7 +11,7 @@ import ObjectMapper
 
 struct PlayerMove  : Mappable{
     var cardId : String!
-    var player : Player!
+    var player : Player! = Player()
     var valueSkill: Int!
     var nameSkill: String!
     var image: UIImage!

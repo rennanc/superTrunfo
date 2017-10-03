@@ -63,10 +63,19 @@ class RoomController : UIViewController{
     var cardsPlayer : [Card] = [Card]()
     var cardsChallenger : [Card] = [Card]()
     var room : Room = Room()
+    var isChallenger = false
+    var lastRound : Round = Round()
+    var isMyTurn : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.prompt = nil
+        
+        // verifica se é o desafiante
+        if(room.creator != playerName){
+            isChallenger = true
+            isMyTurn = true
+        }
         
         beaultifulLayout()
         
@@ -161,20 +170,41 @@ class RoomController : UIViewController{
             //gravando cartas na memoria
             self.cards = cards
             
+            
+            //lista de cartas temporaria
+            var cardsTemp : [Card] = [Card]()
+            //pega 15 cartas e atribui para o jogador
+            if(!isChallenger){
+                let arraySlice = cards[0...14]
+                cardsPlayer = Array(arraySlice)
+                cardsTemp = cardsPlayer
+                //salva as cartas do jogador(criador da partida) no firebase
+                cardService.savePlayerCards(roomId: room.id, playerName: playerName, playerId: String(0), cards: cardsPlayer)
+            }else{
+                let arraySlice2 = cards[15...29]
+                cardsChallenger = Array(arraySlice2)
+                cardsTemp = cardsChallenger
+                //salva as cartas do desafiante no firebase
+                cardService.savePlayerCards(roomId: room.id, playerName: playerName, playerId: String(1), cards: cardsChallenger)
+            }
+            
             //define a primeira vez quantas cartas possui inicialmente
-            playerPanel.numberOfCards = cards.count - 1
+            playerPanel.numberOfCards = cardsTemp.count
+            playerPanel.numberCardInDeck = cards.count
             refreshPlayerPanel()
             
             //exibe a primeira carta selecionada por padrao
-            showCard(card: cards[0])
+            showCard(card: cardsTemp[0])
             
             //exibe a miniatura das outras cartas na mao do jogador
-            imageCard1.image = getImageFromUrl(imageUrl: cards[1].heroImage)
-            imageCard2.image = getImageFromUrl(imageUrl: cards[2].heroImage)
-            imageCard3.image = getImageFromUrl(imageUrl: cards[3].heroImage)
-            imageCard4.image = getImageFromUrl(imageUrl: cards[5].heroImage)
-            imageCard5.image = getImageFromUrl(imageUrl: cards[6].heroImage)
-            imageCard6.image = getImageFromUrl(imageUrl: cards[7].heroImage)
+            imageCard1.image = getImageFromUrl(imageUrl: cardsTemp[1].heroImage)
+            imageCard2.image = getImageFromUrl(imageUrl: cardsTemp[2].heroImage)
+            imageCard3.image = getImageFromUrl(imageUrl: cardsTemp[3].heroImage)
+            imageCard4.image = getImageFromUrl(imageUrl: cardsTemp[5].heroImage)
+            imageCard5.image = getImageFromUrl(imageUrl: cardsTemp[6].heroImage)
+            imageCard6.image = getImageFromUrl(imageUrl: cardsTemp[7].heroImage)
+            
+            
         }else{
             showErrorMessage(message: "Ocorreu um erro ao obter as cartas, saia do jogo e tente novamente.")
         }
@@ -205,14 +235,22 @@ class RoomController : UIViewController{
     
     //acao de selecionar carta para trocar a carta na mao para colocar ela em evidencia
     func selectCard(sender: UITapGestureRecognizer) {
+        var cardsTemp : [Card] = [Card]()
+        if(isChallenger){
+            cardsTemp = cardsChallenger
+        }else{
+            cardsTemp = cardsPlayer
+        }
+        
+        
         //obtendo view
         let selectedView : UIView = sender.view!
         
         //obtendo o card exibido
-        let cardShowed = cards[0]
+        let cardShowed = cardsTemp[0]
         
         //obtem a carta selecionada
-        let selectedCard = cards[selectedView.tag]
+        let selectedCard = cardsTemp[selectedView.tag]
         
         let imageViewSelected : UIImageView = listImageCardsInHands[selectedView.tag]
         
@@ -220,11 +258,15 @@ class RoomController : UIViewController{
         showCard(card: selectedCard)
         
         //troca a ordem da carta mostrada pela carta selecionada no array
-        cards[0] = selectedCard
+        cardsTemp[0] = selectedCard
         
-        cards[selectedView.tag] = cardShowed
+        cardsTemp[selectedView.tag] = cardShowed
         
-        
+        if(isChallenger){
+            cardsChallenger = cardsTemp
+        }else{
+            cardsPlayer = cardsTemp
+        }
         
         imageViewSelected.image = getImageFromUrl(imageUrl: cardShowed.heroImage)
         
@@ -242,6 +284,17 @@ class RoomController : UIViewController{
         playerMove = PlayerMove()
         //salvando imagem
         playerMove.image = imageHero.image
+        playerMove.player.name = playerName
+        
+        
+        var cardsTemp : [Card] = [Card]()
+        if(isChallenger){
+            cardsTemp = cardsChallenger
+        }else{
+            cardsTemp = cardsPlayer
+        }
+        
+        playerMove.cardId = String(cardsTemp[0].id)
         
         //salvando o valor do item selecionado
         playerMove.valueSkill = Int(selectedLabel.text!)
@@ -250,7 +303,6 @@ class RoomController : UIViewController{
         if let i = listOfSkillsName.index(where: { $0.tag == selectedLabel.tag}){
             playerMove.nameSkill = listOfSkillsName[i].text!
         }
-        
         showMessageBeforeMove(playerMove: playerMove)
     }
     
@@ -263,29 +315,31 @@ class RoomController : UIViewController{
     */
     func startGame(){
         
-        var isChallenger = false
-        // verifica se é o desafiantedesafiante
-        if(room.creator != playerName){
-            isChallenger = true
-        }
         if(isChallenger){
+            isMyTurn = true
+            //inserir usuario na sala
             cardService.joinRoom(roomId: room.id, playerName: playerName)
             self.showInfoMessage(message: "Você é o desafiante, a partida começa por você.\n Escolha uma carta entre as 7 e entao, escolha a melhor Habilidade clicando sobre elas.")
+            
+            
         }else{
-           // cardService.waitChallenger(completionHandler: <#([Player], NSError?) -> ()#>, roomId: room.id, playerName: room.creator)
-            
-            cardService.getRooms2 { responseObject, error in
-                
-                if(responseObject[1].players != nil && responseObject[1].players.count > 1){
-                    self.showInfoMessage(message: "Você foi desafiado por " + responseObject[1].players[1].name + ", aguarde o seu desafiante escolher uma carta")
+            isMyTurn = false
+            //adiciona canal para ficar escutando a notificacao quando o adversario entrar na sala
+            cardService.waitChallenger(completionHandler: { responseObject, error in
+                if(responseObject.count > 1){
+                    self.showInfoMessage(message: "Você foi desafiado por " + responseObject[1].name + ", aguarde o seu desafiante escolher uma carta")
                 }
-            }
-            
-            /*cardService.waitChallenger(completionHandler: { responseObject, error in
-                var teste = responseObject
-            }, roomId: room.id, playerName: room.creator)*/
+            }, roomId: room.id, playerName: room.creator)
             
             
+            cardService.waitChangeRounds(completionHandler: { responseObject, error in
+                if(responseObject.count > 0){
+                    if(responseObject.last?.number == self.lastRound.number){
+                        self.showInfoMessage(message: "O Jogador adversario fez a jogada. Ele escolheu o atributo:" + (responseObject.last?.nameSkill)! + ". Escolha sua melhor carta com esse atributo")
+                    }
+                    
+                }
+            }, roomId: room.id)
         }
     }
     
@@ -342,7 +396,38 @@ class RoomController : UIViewController{
         let alert = UIAlertController(title: "Confirmacao", message: "Você escolheu a habilidade de " + playerMove.nameSkill, preferredStyle: UIAlertControllerStyle.alert)
         
         //adicionando opçoes no alerta
-        alert.addAction(UIAlertAction(title: "Enviar", style: UIAlertActionStyle.default, handler: { action in self.sendToBattlePage(playerMove: playerMove) } ))
+        alert.addAction(UIAlertAction(title: "Enviar", style: UIAlertActionStyle.default, handler: { action in
+            
+            
+            if(self.isChallenger && self.lastRound.number == 0){
+                self.lastRound = self.cardService.createRound(roomId: self.room.id, roundId: 1, playerMove: playerMove, playerName: self.playerName)
+            }else{
+                //verifica se for o turno da vez para criar a partida
+                if(self.isMyTurn){
+                    let roundId = self.lastRound.number + 1
+                    self.lastRound = self.cardService.createRound(roomId: self.room.id, roundId: roundId, playerMove: playerMove, playerName: self.playerName)
+                }
+            }
+            
+            //escutar o round para esperar o outro jogador fazer a jogada
+            self.cardService.waitChangeRounds(completionHandler: { responseObject, error in
+                if(responseObject.count > 0){
+                    let lastRound = responseObject[responseObject.endIndex - 1]
+                    let lastPlayerMove = lastRound.playerMoves[lastRound.playerMoves.endIndex - 1]
+                    
+                    if(lastPlayerMove.player.name == self.playerName){
+                        self.showInfoMessage(message: "Aguarde a jogada do outro jogador")
+                    }else{
+                        self.sendToBattlePage(round: (responseObject.last)!)
+                    }
+                    
+                }
+            }, roomId: self.room.id)
+            
+            
+            
+            
+        } ))
         alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.cancel, handler: nil ))
         
         //exibir alerta tela na tela atual
@@ -350,10 +435,10 @@ class RoomController : UIViewController{
     }
     
     //Envia a habilidade selecionada para a tela de batalha para obter o resultado da disputa
-    func sendToBattlePage(playerMove : PlayerMove){
+    func sendToBattlePage(round : Round){
         
         //obtendo resultado da jogada
-        let challengerMove = cardService.getChallengerMove();
+        //let challengerMove = cardService.getChallengerMove();
         
         //obtendo a instancia da controller
         let controllerToSend = storyboard?.instantiateViewController(withIdentifier: "Battle") as! BattleController
@@ -361,15 +446,30 @@ class RoomController : UIViewController{
         
         //TODO criacao de nova partida
         //cardService.createGame()
-        var round : Round = Round()
-        round.playerMoves.append(playerMove)
-        round.playerMoves.append(challengerMove)
+        //roundTemp.playerMoves.append(playerMove)
+        //roundTemp.playerMoves.append(challengerMove)
+        
         controllerToSend.round = round
         
-        
         //transferindo objeto para a nova pagina
-        controllerToSend.playerMove = playerMove
-        controllerToSend.challengerMove = challengerMove
+        if(round.playerMoves[0].player.name == playerName){
+            controllerToSend.playerMove = round.playerMoves[0]
+            controllerToSend.challengerMove = round.playerMoves[1]
+            
+            //obtendo imagem do challenger
+            let challengerCardId : Int =  Int(round.playerMoves[1].cardId)!
+            controllerToSend.challengerMove.image = getImageFromUrl(imageUrl: self.cards[challengerCardId - 1].heroImage)
+        }else{
+            controllerToSend.playerMove = round.playerMoves[1]
+            controllerToSend.challengerMove = round.playerMoves[0]
+            
+            //obtendo imagem do challenger
+            let challengerCardId : Int =  Int(round.playerMoves[0].cardId)!
+            controllerToSend.challengerMove.image = getImageFromUrl(imageUrl: self.cards[challengerCardId - 1].heroImage)
+        }
+    
+    //    controllerToSend.playerMove = playerMove
+      //  controllerToSend.challengerMove = challengerMove
         
         //enviando o usuario para a pagina da batalha
         navigationController?.pushViewController(controllerToSend, animated: true)

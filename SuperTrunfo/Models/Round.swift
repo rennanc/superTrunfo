@@ -11,8 +11,8 @@ import ObjectMapper
 
 //atributos da partida
 struct Round : Mappable{
+    var number : Int! = 0
     var playerMoves : [PlayerMove] = [PlayerMove]()
-    var dateCreation : Date = Date()
     var nameSkill: String!
     
     init(){
@@ -24,8 +24,8 @@ struct Round : Mappable{
     }
     
     mutating func mapping(map: Map) {
-        playerMoves                <- map["playerMoves"]
-        dateCreation           <- map["dateCreation"]
+        number              <- map["number"]
+        playerMoves         <- map["playerMoves"]
         nameSkill           <- map["nameSkill"]
         
     }

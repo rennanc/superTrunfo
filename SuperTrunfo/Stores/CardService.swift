@@ -206,11 +206,11 @@ class CardService {
     }
     
     func createRoom (room : Room){
-        
+        /*
         let params : String =  room.toJSONString(prettyPrint: true)!
         
         let teste : Parameters = Parameters()
-        
+        */
         /*
         Alamofire.request("https://infnet-ios-api.herokuapp.com/createRoom", method: .put, parameters: params, encoding: JSONEncoding.default).responseObject(keyPath: "room") { (response: DataResponse<Room>) in
             
@@ -235,6 +235,9 @@ class CardService {
         
         newRoom.id = requestID
         newRoom.available = true
+        var round : Round = Round()
+        round.number = 1
+        newRoom.rounds.append(round)
         //newRoom.name="sala" + requestID
         
         //salvando sala
@@ -250,27 +253,17 @@ class CardService {
      * obtem a jogada do desafiante
      */
     func joinRoom(roomId: String, playerName: String) -> Bool{
-        /*
-        Alamofire.request("https://httpbin.org/get").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
-        }*/
         
-        let jsonString : String =  "{playerName: \"" + playerName + "\" }"
+        var player : Player = Player()
+        player.name = playerName
+        
+        let JsonString = Mapper().toJSON(player) as [String:AnyObject]
         
         //criando referencia e referenciando o filho rooms
         ref = Database.database().reference(withPath: "rooms/" + roomId + "/players")
         
-        ref.childByAutoId().setValue(jsonString)
+        ref.child(String(1)).setValue(JsonString)
+        //ref.childByAutoId().setValue(JsonString)
         
         return true
     }
@@ -278,20 +271,89 @@ class CardService {
     func waitChallenger(completionHandler: @escaping ([Player], NSError?) -> (), roomId: String, playerName: String){
         
         //criando referencia para escutar a sala
-        ref = Database.database().reference(withPath: "rooms/" + roomId + "/players/")
+        ref = Database.database().reference(withPath: "rooms/" + roomId )
         
         ref.observe(.value, with: { snapshot in
             
-            var players : [Player] = [Player]()
+            let value =  snapshot.value as? [String : AnyObject]
+            let room = Mapper<Room>().map(JSONObject: value)!
+            completionHandler(room.players, nil)
+        })
+    }
+    
+    
+    //salva as cartas do jogador
+    func savePlayerCards(roomId: String, playerName: String, playerId: String, cards: [Card]){
+    
+        var player : Player = Player()
+        player.name = playerName
+        
+        for card in cards {
+            player.cardsId.append(card.id)
+        }
+        
+        let JsonString = Mapper().toJSON(player) as [String:AnyObject]
+        
+        //criando referencia e referenciando o filho rooms
+        ref = Database.database().reference(withPath: "rooms/" + roomId + "/players/")
+        
+        ref.child(playerId).setValue(JsonString)
+    }
+    
+    //obtem as cartas dos jogadores
+    func getPlayerCards(roomId: String, playerName: String) -> Bool{
+        
+        var player : Player = Player()
+        player.name = playerName
+        
+        let JsonString = Mapper().toJSON(player) as [String:AnyObject]
+        
+        //criando referencia e referenciando o filho rooms
+        ref = Database.database().reference(withPath: "rooms/" + roomId + "/players")
+        
+        ref.childByAutoId().setValue(JsonString)
+        
+        return true
+    }
+    
+    /*
+     * obtem a jogada do desafiante
+     */
+    func createRound(roomId: String, roundId: Int, playerMove: PlayerMove, playerName: String) -> Round{
+        
+        var round : Round = Round()
+        round.number = roundId
+        round.nameSkill = playerMove.nameSkill
+        round.playerMoves.append(playerMove)
+        
+        let JsonString = Mapper().toJSON(round) as [String:AnyObject]
+        
+        //criando referencia e referenciando o filho rooms
+        ref = Database.database().reference(withPath: "rooms/" + roomId)
+        
+        ref.child("rounds").childByAutoId().setValue(JsonString)
+        
+        return round
+    }
+    
+    
+    func waitChangeRounds(completionHandler: @escaping ([Round], NSError?) -> (), roomId: String){
+        
+        //criando referencia para escutar a sala
+        ref = Database.database().reference(withPath: "rooms/" + roomId + "/rounds")
+        
+        ref.observe(.value, with: { snapshot in
+            
+            var rounds : [Round] = [Round]()
             if let response = snapshot.value as? [String : AnyObject]{
                 let allKeys = Array(response.keys)
                 
                 for key in allKeys {
                     let item = response[key] as! [String: AnyObject]
                     
-                    players.append(Mapper<Player>().map(JSONObject: item)!)
+                    rounds.append(Mapper<Round>().map(JSONObject: item)!)
                 }
-                completionHandler(players, nil)
+                completionHandler(rounds, nil)
             }
         })
     }

@@ -47,6 +47,7 @@ class BattleController : UIViewController{
         
         if playerMove != nil {
             imagePlayer.image = playerMove.image
+            imageChallenger.image = challengerMove.image
             labelPlayerNameSkill.text = playerMove.nameSkill
             labelChallengerNameSkill.text = playerMove.nameSkill
             labelPlayerValueSkill.text = String(playerMove.valueSkill)

@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="TXZ-pv-Cdy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="598"/>
+                                <rect key="frame" x="0.0" y="40" width="414" height="558"/>
                                 <color key="backgroundColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
@@ -46,7 +46,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="j6i-ET-PmS" firstAttribute="top" secondItem="TXZ-pv-Cdy" secondAttribute="bottom" id="6ce-Vu-tNL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j6i-ET-PmS" secondAttribute="bottom" id="Afu-vp-gvy"/>
@@ -54,11 +54,12 @@
                             <constraint firstAttribute="trailing" secondItem="j6i-ET-PmS" secondAttribute="trailing" id="Vo1-o1-eAT"/>
                             <constraint firstAttribute="trailing" secondItem="TXZ-pv-Cdy" secondAttribute="trailing" id="eyv-8h-5Se"/>
                             <constraint firstItem="j6i-ET-PmS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="u1T-0H-ZJr"/>
-                            <constraint firstItem="TXZ-pv-Cdy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uJh-Ql-AW7"/>
+                            <constraint firstItem="TXZ-pv-Cdy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="uJh-Ql-AW7"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Escolha Uma sala" prompt="Lobby" id="wkr-Oc-rXB">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="3yF-s5-Msr"/>
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="S7X-gH-wMQ">
                             <connections>
                                 <action selector="logout:" destination="BYZ-38-t0r" id="Zd7-NN-X9d"/>
@@ -69,7 +70,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableRooms" destination="TXZ-pv-Cdy" id="EAH-vK-vwX"/>
-                        <segue destination="no0-5m-7gE" kind="show" identifier="segueLogin" id="7tl-fG-cPs"/>
                         <segue destination="8Ux-mX-RuQ" kind="show" id="hXu-5l-06o"/>
                     </connections>
                 </viewController>
@@ -483,12 +483,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Escolha uma Habilidade" id="ma8-D2-phU">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="I7D-r9-DwB"/>
-                        <barButtonItem key="leftBarButtonItem" title="Sair" id="moq-wZ-LJ6">
-                            <connections>
-                                <segue destination="u4B-nI-b3H" kind="show" id="KUt-Bf-Pqr"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title="Sair" id="I7D-r9-DwB"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
@@ -758,7 +753,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u4B-nI-b3H" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="i1Y-cV-FWB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="i1Y-cV-FWB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -776,7 +771,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" id="8Ux-mX-RuQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="oEq-FV-Ful">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="oEq-FV-Ful">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -800,7 +795,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="250"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="CU2-yq-hvR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="CU2-yq-hvR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -818,7 +813,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="no0-5m-7gE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="2hx-1U-qOq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="2hx-1U-qOq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -834,6 +829,5 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="leg-VY-wds"/>
-        <segue reference="KUt-Bf-Pqr"/>
     </inferredMetricsTieBreakers>
 </document>
