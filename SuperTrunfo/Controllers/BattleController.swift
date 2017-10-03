@@ -47,10 +47,12 @@ class BattleController : UIViewController{
         
         if playerMove != nil {
             imagePlayer.image = playerMove.image
-            imageChallenger.image = challengerMove.image
-            labelPlayerNameSkill.text = playerMove.nameSkill
-            labelChallengerNameSkill.text = playerMove.nameSkill
+            labelPlayerNameSkill.text = round.nameSkill
             labelPlayerValueSkill.text = String(playerMove.valueSkill)
+            
+            imageChallenger.image = challengerMove.image
+            labelChallengerNameSkill.text = round.nameSkill
+            labelChallengerValueSkill.text = String(playerMove.valueSkill)
             
             if(playerMove.valueSkill > challengerMove.valueSkill){
                 self.showInfoMessage(title: "Ganhou!!!",message: "Você ganhou essa jogada")

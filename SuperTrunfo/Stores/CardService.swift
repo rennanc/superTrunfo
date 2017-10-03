@@ -22,9 +22,7 @@ class CardService {
     /*
     * Servicos para obter cartas para o jogador
     */
-    func getCards(completionHandler: @escaping ([Card], NSError?) -> ()) -> [Card]!{
-        
-        var cards = [Card]()
+    func getCards(completionHandler: @escaping ([Card], NSError?) -> ()){
         
         //obtendo por servico da api via rest
         Alamofire.request("https://infnet-ios-api.herokuapp.com/sortDeck").responseArray { (response: DataResponse<[Card]>) in
@@ -78,7 +76,6 @@ class CardService {
             
             cards.append(card)
         }*/
-        return cards
     }
     
     /*

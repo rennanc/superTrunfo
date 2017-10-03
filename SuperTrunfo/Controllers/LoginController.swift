@@ -79,7 +79,7 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueLobby2"{
             if segue.destination is UINavigationController {
-                var viewController = segue.destination as! UINavigationController
+                let viewController = segue.destination as! UINavigationController
                 let targetViewController = viewController.topViewController as! LobbyController
                 targetViewController.playerName = txtLogin.text!
             }

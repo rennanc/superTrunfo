@@ -159,7 +159,6 @@ class RoomController : UIViewController{
     func showCards(){
         cardService.getCards { responseObject, error in
             self.buildPlayerDeck(cards: responseObject)
-            
         }
     }
     
@@ -456,12 +455,20 @@ class RoomController : UIViewController{
             controllerToSend.playerMove = round.playerMoves[0]
             controllerToSend.challengerMove = round.playerMoves[1]
             
+            //obtendo imagem do player
+            let playerCardId : Int =  Int(round.playerMoves[0].cardId)!
+            controllerToSend.playerMove.image = getImageFromUrl(imageUrl: self.cards[playerCardId - 1].heroImage)
+            
             //obtendo imagem do challenger
             let challengerCardId : Int =  Int(round.playerMoves[1].cardId)!
             controllerToSend.challengerMove.image = getImageFromUrl(imageUrl: self.cards[challengerCardId - 1].heroImage)
         }else{
             controllerToSend.playerMove = round.playerMoves[1]
             controllerToSend.challengerMove = round.playerMoves[0]
+            
+            //obtendo imagem do player
+            let playerCardId : Int =  Int(round.playerMoves[1].cardId)!
+            controllerToSend.playerMove.image = getImageFromUrl(imageUrl: self.cards[playerCardId - 1].heroImage)
             
             //obtendo imagem do challenger
             let challengerCardId : Int =  Int(round.playerMoves[0].cardId)!
