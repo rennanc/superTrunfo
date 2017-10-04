@@ -234,6 +234,7 @@ class CardService {
         newRoom.available = true
         var round : Round = Round()
         round.number = 1
+        round.activePlayer = newRoom.creator
         newRoom.rounds.append(round)
         //newRoom.name="sala" + requestID
         
@@ -265,16 +266,18 @@ class CardService {
         return true
     }
     
-    func waitChallenger(completionHandler: @escaping ([Player], NSError?) -> (), roomId: String, playerName: String){
+    func waitEnterOtherPlayer(completionHandler: @escaping (Player, NSError?) -> (), roomId: String, playerName: String){
         
         //criando referencia para escutar a sala
         ref = Database.database().reference(withPath: "rooms/" + roomId )
         
-        ref.observe(.value, with: { snapshot in
-            
+        
+        
+        ref.child("players").observe(.childAdded, with: { snapshot in
+
             let value =  snapshot.value as? [String : AnyObject]
-            let room = Mapper<Room>().map(JSONObject: value)!
-            completionHandler(room.players, nil)
+            let player = Mapper<Player>().map(JSONObject: value)!
+            completionHandler(player, nil)
         })
     }
     
@@ -337,9 +340,9 @@ class CardService {
     func waitChangeRounds(completionHandler: @escaping ([Round], NSError?) -> (), roomId: String){
         
         //criando referencia para escutar a sala
-        ref = Database.database().reference(withPath: "rooms/" + roomId + "/rounds")
+        ref = Database.database().reference(withPath: "rooms/" + roomId)
         
-        ref.observe(.value, with: { snapshot in
+        ref.child("rounds").observe(.value, with: { snapshot in
             
             var rounds : [Round] = [Round]()
             if let response = snapshot.value as? [String : AnyObject]{

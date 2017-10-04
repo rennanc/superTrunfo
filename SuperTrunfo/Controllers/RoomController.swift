@@ -42,7 +42,7 @@ class RoomController : UIViewController{
     @IBOutlet weak var imageCard6: UIImageView!
     
     var listImageCardsInHands = [UIImageView]() //lista de imagens de cartas na mao
-    
+
     
     //*** itens de tela do jogador ***
     @IBOutlet weak var labelNumberOfCards: UILabel!
@@ -84,7 +84,6 @@ class RoomController : UIViewController{
         showCards()
         
         startGame()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -323,20 +322,27 @@ class RoomController : UIViewController{
             
         }else{
             isMyTurn = false
+            self.freezePlayerAction(freeze: true)
             //adiciona canal para ficar escutando a notificacao quando o adversario entrar na sala
-            cardService.waitChallenger(completionHandler: { responseObject, error in
-                if(responseObject.count > 1){
-                    self.showInfoMessage(message: "Você foi desafiado por " + responseObject[1].name + ", aguarde o seu desafiante escolher uma carta")
-                }
+            cardService.waitEnterOtherPlayer(completionHandler: { player, error in
+                
+                if(player.name != self.playerName){
+                    self.showInfoMessage(message: "Você foi desafiado por " + player.name + ", aguarde o seu desafiante escolher uma carta")
+               }
+                
             }, roomId: room.id, playerName: room.creator)
             
             
-            cardService.waitChangeRounds(completionHandler: { responseObject, error in
-                if(responseObject.count > 0){
-                    if(responseObject.last?.number == self.lastRound.number){
-                        self.showInfoMessage(message: "O Jogador adversario fez a jogada. Ele escolheu o atributo:" + (responseObject.last?.nameSkill)! + ". Escolha sua melhor carta com esse atributo")
+            cardService.waitChangeRounds(completionHandler: { roundList, error in
+                let lastRound : Round = roundList [roundList.endIndex - 1]
+                
+                if(lastRound.activePlayer == self.playerName){
+                    if(lastRound.number == self.lastRound.number){
+                        self.showInfoMessage(message: "O Jogador adversario fez a jogada. Ele escolheu o atributo:" + (lastRound.nameSkill)! + ". Escolha sua melhor carta com esse atributo")
                     }
-                    
+                    self.freezePlayerAction(freeze: true)
+                }else {
+                    self.freezePlayerAction(freeze: false)
                 }
             }, roomId: room.id)
         }
@@ -482,4 +488,29 @@ class RoomController : UIViewController{
         navigationController?.pushViewController(controllerToSend, animated: true)
     }
     
+    func freezePlayerAction(freeze : Bool) {
+        
+        if(freeze){
+            LoadingOverlay.shared.showOverlay(view: self.view)
+        }else{
+            LoadingOverlay.shared.hideOverlayView()
+        }
+        
+        
+        for skill in listOfSkillsName {
+            skill.isEnabled = freeze
+        }
+        
+        for skill in listOfSkillsValue {
+            skill.isEnabled = freeze
+        }
+        
+        for skill in listImageCardsInHands {
+            skill.isUserInteractionEnabled = freeze
+        }
+    }
+    
+    
 }
+
+
