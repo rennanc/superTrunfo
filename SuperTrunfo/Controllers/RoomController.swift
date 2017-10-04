@@ -57,6 +57,7 @@ class RoomController : UIViewController{
     
     //*** modelos ***
     var playerName : String = ""
+    var playerEnemy : String = ""
     var playerPanel : Panel! = Panel()
     var playerMove : PlayerMove!
     var cards : [Card] = [Card]()
@@ -66,6 +67,7 @@ class RoomController : UIViewController{
     var isChallenger = false
     var lastRound : Round = Round()
     var isMyTurn : Bool = false
+    var firstAcess : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -312,39 +314,43 @@ class RoomController : UIViewController{
     * e mostra as instrucoes para seguir
     */
     func startGame(){
+        cardService.getPlayerTurn(completionHandler: { player, error in
+            
+            
+            //primeiro acesso de quem criou a sala
+            if(!self.isChallenger && self.firstAcess <= 0) {
+                self.freezePlayerAction(freeze: true)
+                self.showInfoMessage(message: "A partida ainda não começou, aguarde a entrada de outro jogador")
+            }
+            //primeiro acesso do desafiante
+            else if(self.isChallenger && self.firstAcess == 0) {
+                self.freezePlayerAction(freeze: false)
+                self.showInfoMessage(message: "Você é o desafiante, a partida começa por você.\n Escolha uma carta entre as 7 e entao, escolha a melhor Habilidade clicando sobre elas.")
+            }
+            //as demais jogadas
+            else {
+                self.freezePlayerAction(freeze: player != self.playerName)
+                self.showInfoMessage(message: "É o turno do " + player)
+                
+            }
+
+            self.firstAcess += 1
+            
+        }, roomId: room.id)
+        
         
         if(isChallenger){
-            isMyTurn = true
-            //inserir usuario na sala
             cardService.joinRoom(roomId: room.id, playerName: playerName)
-            self.showInfoMessage(message: "Você é o desafiante, a partida começa por você.\n Escolha uma carta entre as 7 e entao, escolha a melhor Habilidade clicando sobre elas.")
-            
-            
         }else{
-            isMyTurn = false
-            self.freezePlayerAction(freeze: true)
             //adiciona canal para ficar escutando a notificacao quando o adversario entrar na sala
             cardService.waitEnterOtherPlayer(completionHandler: { player, error in
                 
                 if(player.name != self.playerName){
+                    self.playerEnemy = player.name
                     self.showInfoMessage(message: "Você foi desafiado por " + player.name + ", aguarde o seu desafiante escolher uma carta")
                }
                 
             }, roomId: room.id, playerName: room.creator)
-            
-            
-            cardService.waitChangeRounds(completionHandler: { roundList, error in
-                let lastRound : Round = roundList [roundList.endIndex - 1]
-                
-                if(lastRound.activePlayer == self.playerName){
-                    if(lastRound.number == self.lastRound.number){
-                        self.showInfoMessage(message: "O Jogador adversario fez a jogada. Ele escolheu o atributo:" + (lastRound.nameSkill)! + ". Escolha sua melhor carta com esse atributo")
-                    }
-                    self.freezePlayerAction(freeze: true)
-                }else {
-                    self.freezePlayerAction(freeze: false)
-                }
-            }, roomId: room.id)
         }
     }
     
@@ -408,10 +414,8 @@ class RoomController : UIViewController{
                 self.lastRound = self.cardService.createRound(roomId: self.room.id, roundId: 1, playerMove: playerMove, playerName: self.playerName)
             }else{
                 //verifica se for o turno da vez para criar a partida
-                if(self.isMyTurn){
-                    let roundId = self.lastRound.number + 1
-                    self.lastRound = self.cardService.createRound(roomId: self.room.id, roundId: roundId, playerMove: playerMove, playerName: self.playerName)
-                }
+                let roundId = self.lastRound.number + 1
+                self.lastRound = self.cardService.createRound(roomId: self.room.id, roundId: roundId, playerMove: playerMove, playerName: self.playerName)
             }
             
             //escutar o round para esperar o outro jogador fazer a jogada
@@ -422,6 +426,7 @@ class RoomController : UIViewController{
                     
                     if(lastPlayerMove.player.name == self.playerName){
                         self.showInfoMessage(message: "Aguarde a jogada do outro jogador")
+                        //altera ao nome para o oponente
                     }else{
                         self.sendToBattlePage(round: (responseObject.last)!)
                     }

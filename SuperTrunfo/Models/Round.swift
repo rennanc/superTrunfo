@@ -14,7 +14,6 @@ struct Round : Mappable{
     var number : Int! = 0
     var playerMoves : [PlayerMove] = [PlayerMove]()
     var nameSkill: String!
-    var activePlayer: String!
     
     init(){
         
@@ -28,6 +27,6 @@ struct Round : Mappable{
         number              <- map["number"]
         playerMoves         <- map["playerMoves"]
         nameSkill           <- map["nameSkill"]
-        activePlayer        <- map["activePlayer"]
+        
     }
 }

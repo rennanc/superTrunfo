@@ -234,7 +234,7 @@ class CardService {
         newRoom.available = true
         var round : Round = Round()
         round.number = 1
-        round.activePlayer = newRoom.creator
+        newRoom.playerTurn = newRoom.creator
         newRoom.rounds.append(round)
         //newRoom.name="sala" + requestID
         
@@ -336,6 +336,18 @@ class CardService {
         return round
     }
     
+    func getPlayerTurn(completionHandler: @escaping (String, NSError?) -> (), roomId: String){
+        
+        
+        //criando referencia para escutar a sala
+        ref = Database.database().reference(withPath: "rooms/" + roomId )
+        
+        ref.child("playerTurn").observe(.value, with: { snapshot in
+            
+            let player =  snapshot.value as? String
+            completionHandler(player!, nil)
+        })
+    }
     
     func waitChangeRounds(completionHandler: @escaping ([Round], NSError?) -> (), roomId: String){
         
@@ -357,4 +369,6 @@ class CardService {
             }
         })
     }
+    
+   // func setPlayerTurn()
 }
